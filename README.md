@@ -16,7 +16,7 @@ fund's pitch deck, or as what it actually describes.
 
 ## Live site
 
-Deployed on Vercel: _(URL added after first deploy — see below)_
+Deployed on Vercel: **https://collapse-capital.vercel.app**
 
 ## Tech
 
