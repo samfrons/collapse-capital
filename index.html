@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Collapse Capital — Positioned Since the Pleistocene</title>
+<meta name="description" content="A satirical wealth-management prospectus that reports real climate and economic collapse as bullish market data. Every figure is sourced; the only invention is the voice that finds them encouraging." />
+<meta name="author" content="Collapse Capital LP" />
+<meta name="theme-color" content="#FBF9F4" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Collapse Capital LP" />
+<meta property="og:title" content="Collapse Capital — Positioned Since the Pleistocene" />
+<meta property="og:description" content="A satirical investor prospectus that reports civilizational collapse as a bullish market. Real, sourced data — flip Investor ⇄ Human to read it two ways." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Collapse Capital — Positioned Since the Pleistocene" />
+<meta name="twitter:description" content="Collapse, reported as alpha. Every figure sourced. Flip Investor ⇄ Human to read it two ways." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FBF9F4'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%238E3A1D' stroke-width='2'/%3E%3Cline x1='16' y1='5' x2='16' y2='27' stroke='%231B1712' stroke-width='1.1'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF9F4; --paper-2:#F4F0E8; --card:#FEFDFB; --stage:#F3EFE6;
+    --ink:#1B1712; --ink-2:#4C463B; --ink-3:#797263;
+    --oxblood:#8E3A1D; --gold:#9C7A2A; --forest:#3B6042; --teal:#4E7E7A;
+    --line:#E7E0D1; --hair:rgba(27,23,18,0.10);
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.28;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");}
+  .serif{font-family:var(--serif);font-variation-settings:"opsz" 120;}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;font-variation-settings:"opsz" 144;letter-spacing:-0.01em;}
+  h1 b,h2 b,h3 b,.flare{font-weight:600;color:var(--oxblood);}
+  .eyebrow{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin:0 0 20px;}
+
+  /* HEADER */
+  header.top{position:sticky;top:0;z-index:50;background:rgba(251,249,244,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .top-bar{display:flex;align-items:center;gap:22px;padding:14px 30px;max-width:1200px;margin:0 auto;}
+  .wordmark{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--ink);}
+  .wordmark .mk{font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:0.01em;line-height:1;}
+  .wordmark .lp{font-family:var(--sans);font-size:8.5px;font-weight:600;letter-spacing:0.16em;color:var(--ink-3);border:1px solid var(--line);padding:2px 5px;}
+  nav.mid{margin:0 auto;display:flex;gap:26px;}
+  nav.mid a{font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:0.02em;color:var(--ink-2);text-decoration:none;transition:color .2s;}
+  nav.mid a:hover{color:var(--oxblood);}
+  .clock{display:flex;align-items:center;gap:8px;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--ink-2);letter-spacing:0.03em;white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .clock .pip{width:6px;height:6px;border-radius:50%;background:var(--oxblood);}
+  .clock .lbl{color:var(--ink-3);font-size:9px;letter-spacing:0.14em;}
+  .toggle{display:inline-flex;border:1px solid var(--ink);border-radius:100px;overflow:hidden;position:relative;}
+  .toggle button{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:transparent;color:var(--ink-2);border:0;padding:7px 14px;cursor:pointer;position:relative;z-index:2;transition:color .3s;}
+  .toggle button[aria-pressed="true"]{color:var(--paper);}
+  .toggle .knob{position:absolute;top:0;bottom:0;left:0;width:50%;background:var(--ink);z-index:1;border-radius:100px;transition:transform .34s cubic-bezier(.6,.1,.2,1),background .34s;}
+  body[data-mode="human"] .toggle .knob{transform:translateX(100%);background:var(--oxblood);}
+  .toggle.hint{animation:hintpulse 2.6s ease-in-out 3;}
+  @keyframes hintpulse{0%,100%{box-shadow:0 0 0 0 rgba(142,58,29,0);}50%{box-shadow:0 0 0 3px rgba(142,58,29,0.22);}}
+
+  .tape{border-bottom:1px solid var(--line);background:var(--paper-2);overflow:hidden;}
+  .tape-track{display:inline-flex;white-space:nowrap;padding:7px 0;font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink-2);letter-spacing:0.06em;text-transform:uppercase;animation:marq 46s linear infinite;font-variant-numeric:tabular-nums;}
+  .tape-track span{padding:0 24px;}
+  .tape-track b{color:var(--ink);font-weight:600;}
+  .tape-track .up{color:var(--forest);font-weight:600;}
+  @keyframes marq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @keyframes engineSpin{to{transform:rotate(360deg);}}
+  @keyframes ringFlow{to{stroke-dashoffset:-32;}}
+
+  main{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 30px;}
+
+  /* HERO */
+  .hero{position:relative;padding:78px 0 40px;}
+  .guilloche-hero{position:absolute;right:-80px;top:20px;width:min(560px,60vw);opacity:0.5;pointer-events:none;z-index:0;}
+  .hero .inner{position:relative;z-index:1;}
+  .hero h1{font-size:clamp(40px,6.6vw,84px);line-height:1.0;margin:0 0 24px;max-width:17ch;}
+  .hero .sub{font-size:clamp(16px,1.6vw,20px);line-height:1.55;max-width:56ch;color:var(--ink-2);margin:0 0 6px;}
+  body[data-mode="investor"] .hero .sub{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 40;color:var(--ink);}
+  .swap{transition:opacity .28s ease;}
+  .swapping{opacity:0;}
+
+  .core{margin:44px 0 8px;border:1px solid var(--line);background:var(--card);position:relative;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,0.6) inset,0 18px 40px -30px rgba(27,23,18,0.4);}
+  .core svg{display:block;width:100%;height:auto;}
+  .core .cap{position:absolute;left:18px;bottom:14px;font-family:var(--sans);font-size:11px;color:var(--ink-3);letter-spacing:0.01em;max-width:62%;line-height:1.5;}
+  .core .corelabel{position:absolute;top:15px;left:18px;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.18em;color:var(--ink-2);text-transform:uppercase;}
+
+  /* SECTIONS */
+  .sec{padding:64px 0 8px;border-top:1px solid var(--line);margin-top:34px;}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:30px;flex-wrap:wrap;}
+  .sec-head .lab{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+  .sec-head h2{font-size:clamp(26px,3.6vw,40px);margin:0;line-height:1.02;flex:1 1 auto;}
+  .sec-head .note{font-family:var(--sans);font-size:11.5px;color:var(--ink-3);letter-spacing:0.02em;}
+  .intro{font-size:clamp(15px,1.5vw,18px);line-height:1.55;max-width:64ch;color:var(--ink-2);margin:0 0 26px;}
+  body[data-mode="investor"] .intro{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 40;color:var(--ink);}
+
+  /* HOLDINGS */
+  .holdings{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .pos{background:var(--card);border:1px solid var(--line);padding:28px 26px 24px;position:relative;box-shadow:0 18px 40px -34px rgba(27,23,18,0.5);}
+  .pos .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+  .pos .sym{font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:0.05em;color:var(--ink);}
+  .pos .sector{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line);padding:3px 7px;}
+  .pos .big{font-family:var(--serif);font-weight:500;font-variation-settings:"opsz" 144;font-size:clamp(46px,6vw,66px);line-height:0.95;color:var(--accent,var(--ink));}
+  .pos .unit{font-family:var(--sans);font-size:13px;color:var(--ink-2);margin-left:7px;}
+  .pos .delta{font-family:var(--sans);font-size:12.5px;font-weight:500;color:var(--forest);margin-top:11px;letter-spacing:0.01em;font-variant-numeric:tabular-nums;}
+  .pos .delta .ar{margin-right:5px;}
+  .pos .cap{font-size:15px;line-height:1.5;color:var(--ink-2);margin:16px 0 0;min-height:66px;}
+  body[data-mode="investor"] .pos .cap{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 32;color:var(--ink);}
+  .pos .src{font-family:var(--sans);font-size:10.5px;color:var(--ink-3);letter-spacing:0.01em;margin-top:16px;line-height:1.5;border-top:1px solid var(--hair);padding-top:12px;}
+  .pos .live{font-family:var(--sans);font-size:11.5px;font-weight:500;color:var(--forest);margin-top:8px;font-variant-numeric:tabular-nums;}
+  .pos .live .since{color:var(--ink-3);font-weight:400;}
+
+  /* ISOMETRIC */
+  .tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px;}
+  .tab{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:var(--ink-2);background:transparent;border:1px solid var(--line);border-radius:100px;padding:8px 16px;cursor:pointer;transition:all .2s;}
+  .tab:hover{border-color:var(--ink);color:var(--ink);}
+  .tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+  .stage{position:relative;border:1px solid var(--line);background:radial-gradient(120% 120% at 50% 0%,var(--card) 0%,var(--stage) 85%);overflow:hidden;box-shadow:0 20px 46px -34px rgba(27,23,18,0.5);}
+  .stage canvas{display:block;width:100%;height:clamp(380px,54vw,540px);touch-action:pan-y;}
+  .stage-unit{position:absolute;top:14px;left:18px;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-2);}
+  .isotip{position:absolute;pointer-events:none;opacity:0;transform:translate(-50%,-115%);transition:opacity .12s;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--tipc,var(--oxblood));padding:11px 13px;max-width:250px;z-index:6;box-shadow:0 14px 36px -18px rgba(27,23,18,0.6);}
+  .isotip .v{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--ink);line-height:1;}
+  .isotip .l{font-family:var(--sans);font-size:10px;font-weight:600;color:var(--ink-2);letter-spacing:0.06em;text-transform:uppercase;margin-top:5px;}
+  .isotip .s{font-family:var(--sans);font-size:10px;color:var(--ink-3);margin-top:8px;line-height:1.45;}
+  .field-say{font-size:clamp(16px,1.8vw,20px);line-height:1.5;color:var(--ink);margin:22px 0 8px;max-width:66ch;}
+  body[data-mode="investor"] .field-say{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 40;}
+  .field-note{font-family:var(--sans);font-size:11px;color:var(--ink-3);letter-spacing:0.01em;line-height:1.6;margin:0;max-width:84ch;}
+
+  /* FLYWHEEL */
+  .fly-stage{position:relative;height:clamp(460px,62vw,600px);border:1px solid var(--line);background:radial-gradient(80% 80% at 50% 46%,var(--card) 0%,var(--stage) 78%);overflow:hidden;box-shadow:0 20px 46px -34px rgba(27,23,18,0.5);}
+  .fly-stage svg.ring{position:absolute;inset:0;width:100%;height:100%;}
+  #flowRing{animation:ringFlow 3.2s linear infinite;}
+  .fnode{position:absolute;transform:translate(-50%,-50%);width:clamp(150px,20vw,200px);background:var(--card);border:1px solid var(--line);border-top:2px solid var(--nc,var(--gold));padding:15px 16px 16px;box-shadow:0 16px 40px -28px rgba(27,23,18,0.6);transition:transform .2s,box-shadow .2s;}
+  .fnode:hover,.fnode:focus-within{transform:translate(-50%,-50%) scale(1.045);box-shadow:0 0 0 1px var(--nc,var(--gold)),0 22px 50px -26px rgba(27,23,18,0.7);z-index:5;}
+  .fnode .fl{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--nc,var(--gold));}
+  .fnode .fbig{font-family:var(--serif);font-weight:500;font-variation-settings:"opsz" 144;font-size:clamp(32px,4.4vw,46px);line-height:0.95;color:var(--ink);margin-top:6px;}
+  .fnode .fsub{font-family:var(--sans);font-size:11px;color:var(--ink-2);margin-top:5px;line-height:1.4;}
+  .fnode .dossier{position:absolute;left:50%;top:calc(100% + 10px);transform:translateX(-50%);width:min(280px,78vw);background:var(--card);border:1px solid var(--line);border-left:3px solid var(--nc,var(--gold));padding:13px 14px;font-family:var(--sans);font-size:11px;line-height:1.6;color:var(--ink-2);opacity:0;pointer-events:none;transition:opacity .18s;z-index:8;box-shadow:0 18px 44px -22px rgba(27,23,18,0.7);}
+  .fnode:hover .dossier,.fnode:focus-within .dossier,.fnode.active .dossier{opacity:1;}
+  .fnode.active{transform:translate(-50%,-50%) scale(1.05);box-shadow:0 0 0 1px var(--nc,var(--gold)),0 22px 50px -26px rgba(27,23,18,0.7);z-index:5;}
+  .fnode .dossier b{color:var(--ink);font-weight:600;}
+  .fnode.d-up .dossier{top:auto;bottom:calc(100% + 10px);}
+  .fnode.d-left .dossier{left:auto;right:calc(100% + 12px);top:50%;transform:translateY(-50%);}
+  .fnode.d-right .dossier{left:calc(100% + 12px);right:auto;top:50%;transform:translateY(-50%);}
+  .fly-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;width:clamp(120px,16vw,168px);}
+  .fly-core svg{display:block;width:100%;height:auto;transform-origin:center;animation:engineSpin 64s linear infinite;}
+  .fly-core .lbl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--sans);font-size:8.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--oxblood);}
+  .fly-say{font-size:clamp(16px,1.8vw,20px);line-height:1.5;color:var(--ink);margin:24px 0 8px;max-width:70ch;}
+  body[data-mode="investor"] .fly-say{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 40;}
+  .fly-note{font-family:var(--sans);font-size:11px;color:var(--ink-3);letter-spacing:0.01em;line-height:1.6;margin:0;max-width:90ch;}
+
+  /* CAPITAL LEDGER */
+  .ledger-viz{border:1px solid var(--line);background:var(--card);padding:16px 12px 10px;box-shadow:0 18px 40px -34px rgba(27,23,18,0.5);margin-bottom:22px;}
+  .ledger-viz svg{display:block;width:100%;height:auto;}
+  .ledger-viz text{opacity:0;transition:opacity .6s ease .3s;}
+  .ledger-viz.in text{opacity:1;}
+  .ledger-entries{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:8px;}
+  .lentry{border:1px solid var(--line);border-left:3px solid var(--oxblood);background:var(--card);padding:24px 24px;box-shadow:0 18px 40px -34px rgba(27,23,18,0.5);}
+  .lentry .le-lab{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin:0 0 12px;}
+  .lentry .le-big{font-family:var(--serif);font-weight:600;font-variation-settings:"opsz" 144;font-size:clamp(38px,5vw,54px);line-height:0.92;color:var(--oxblood);}
+  .lentry .le-sub{font-family:var(--sans);font-size:12.5px;font-weight:500;color:var(--ink-2);margin-top:6px;}
+  .lentry .le-body{font-size:14.5px;line-height:1.5;color:var(--ink-2);margin:14px 0 0;}
+  body[data-mode="investor"] .lentry .le-body{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 32;color:var(--ink);}
+  .lentry .le-src{font-family:var(--sans);font-size:10px;color:var(--ink-3);margin-top:16px;border-top:1px solid var(--hair);padding-top:12px;line-height:1.5;}
+  @media(max-width:860px){.ledger-entries{grid-template-columns:1fr;}}
+  .share-legend{display:flex;gap:20px;flex-wrap:wrap;margin:0 0 14px;font-family:var(--sans);font-size:11.5px;color:var(--ink-2);}
+  .share-legend b{display:inline-flex;align-items:center;gap:7px;font-weight:500;}
+  .share-legend i{width:12px;height:12px;display:inline-block;}
+
+  /* PRINCIPLES */
+  .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line);}
+  .prin{padding:30px 30px 30px 0;border-bottom:1px solid var(--line);}
+  .prin:nth-child(odd){padding-right:40px;border-right:1px solid var(--line);}
+  .prin:nth-child(even){padding-left:40px;}
+  .prin .txt{font-family:var(--serif);font-weight:400;font-variation-settings:"opsz" 72;font-size:clamp(19px,2.2vw,26px);line-height:1.22;color:var(--ink);}
+  body[data-mode="human"] .prin .txt{font-family:var(--sans);font-size:clamp(15px,1.7vw,18px);font-weight:400;color:var(--ink-2);line-height:1.45;}
+  .prin .num{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--oxblood);letter-spacing:0.05em;margin-top:14px;}
+
+  /* THESIS */
+  .thesis{display:grid;grid-template-columns:1.12fr 1fr;gap:28px;align-items:stretch;}
+  .thesis .chart,.thesis .say{background:var(--card);border:1px solid var(--line);padding:26px 26px;box-shadow:0 18px 40px -34px rgba(27,23,18,0.5);}
+  .thesis svg{display:block;width:100%;height:auto;}
+  .thesis .legend{display:flex;gap:22px;margin-top:16px;flex-wrap:wrap;}
+  .thesis .legend div{font-family:var(--sans);font-size:11px;color:var(--ink-2);letter-spacing:0.01em;display:flex;align-items:center;gap:8px;}
+  .thesis .legend i{width:18px;height:3px;display:inline-block;}
+  .thesis .say{display:flex;flex-direction:column;}
+  .thesis .say h3{font-size:22px;margin:0 0 14px;color:var(--ink);}
+  .thesis .say p{font-size:15.5px;line-height:1.6;margin:0 0 14px;color:var(--ink-2);}
+  body[data-mode="investor"] .thesis .say p{font-family:var(--serif);font-style:italic;font-variation-settings:"opsz" 32;color:var(--ink);}
+  .thesis .say .src{font-family:var(--sans);font-size:10.5px;color:var(--ink-3);margin-top:auto;line-height:1.5;border-top:1px solid var(--hair);padding-top:12px;}
+
+  /* LETTER */
+  .letter{padding:64px 0 20px;border-top:1px solid var(--line);margin-top:34px;}
+  .letter .box{border:1px solid var(--line);border-left:3px solid var(--oxblood);background:var(--card);padding:38px 40px;max-width:76ch;box-shadow:0 20px 46px -36px rgba(27,23,18,0.5);}
+  .letter .to{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin:0 0 20px;}
+  .letter p.body{font-family:var(--serif);font-size:clamp(18px,2.1vw,23px);line-height:1.5;margin:0;font-style:italic;font-variation-settings:"opsz" 60;color:var(--ink);}
+  body[data-mode="human"] .letter p.body{font-family:var(--sans);font-style:normal;font-size:clamp(14px,1.7vw,16px);line-height:1.65;color:var(--ink-2);}
+  .letter .sign{font-family:var(--sans);font-size:11.5px;color:var(--ink-3);letter-spacing:0.03em;margin-top:24px;}
+
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:44px 0 64px;position:relative;z-index:1;}
+  .foot-in{max-width:1200px;margin:0 auto;padding:0 30px;display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;}
+  .foot-main{flex:1 1 460px;}
+  .foot-orn{width:150px;opacity:0.55;flex:0 0 auto;}
+  .foot-orn svg{width:100%;height:auto;}
+  .sources{font-family:var(--sans);font-size:11.5px;line-height:1.85;color:var(--ink-2);}
+  .sources b{color:var(--ink);font-weight:600;}
+  .disclaimer{font-family:var(--sans);font-size:11px;color:var(--ink-3);margin-top:24px;line-height:1.65;max-width:80ch;}
+  .disclaimer .hard{color:var(--oxblood);font-weight:600;}
+  .totop{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2);text-decoration:none;margin-top:22px;display:inline-block;}
+  .totop:hover{color:var(--oxblood);}
+
+  @media(max-width:860px){
+    .holdings{grid-template-columns:1fr;}
+    .thesis{grid-template-columns:1fr;}
+    .principles{grid-template-columns:1fr;}
+    .prin:nth-child(odd){padding-right:0;border-right:0;}
+    .prin:nth-child(even){padding-left:0;}
+    .fnode{width:clamp(130px,40vw,172px);}
+    .fnode .dossier{width:min(240px,72vw);}
+    nav.mid{display:none;}
+  }
+  @media(max-width:640px){
+    .top-bar{flex-wrap:wrap;gap:12px;padding:12px 22px;}
+    .clock{order:3;}
+    .toggle{order:2;margin-left:auto;}
+    main{padding:0 22px;}
+    .guilloche-hero{opacity:0.28;right:-120px;}
+  }
+  a:focus-visible,button:focus-visible,.fnode:focus-visible{outline:2px solid var(--oxblood);outline-offset:2px;}
+  @media(prefers-reduced-motion:reduce){.tape-track,.toggle.hint,.fly-core svg,#flowRing{animation:none;}*{scroll-behavior:auto;}}
+</style>
+</head>
+<body data-mode="investor">
+
+<header class="top">
+  <div class="top-bar">
+    <a class="wordmark" href="#top"><span class="mk">Collapse Capital</span><span class="lp">LP</span></a>
+    <nav class="mid">
+      <a href="#holdings">Holdings</a><a href="#field">Indicators</a><a href="#engine">The Flywheel</a><a href="#ledger">The Ledger</a><a href="#divide">The Divide</a><a href="#thesis">Thesis</a>
+    </nav>
+    <div class="clock" aria-label="Doomsday Clock countdown"><span class="pip"></span><span><span class="lbl">T&#8211;MINUS&nbsp;</span><span id="dclock">00:01:25.00</span></span></div>
+    <div class="toggle hint" role="group" aria-label="Reading mode">
+      <span class="knob" aria-hidden="true"></span>
+      <button id="btn-investor" aria-pressed="true">Investor</button>
+      <button id="btn-human" aria-pressed="false">Human</button>
+    </div>
+  </div>
+  <div class="tape" aria-hidden="true"><div class="tape-track" id="tape"></div></div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="guilloche-hero" id="guillocheHero" aria-hidden="true"></div>
+    <div class="inner">
+      <p class="eyebrow">Prospectus &nbsp;/&nbsp; Core Sample 001</p>
+      <h1 class="swap" data-swap="hero-h">The only asset class that has never posted a <b class="flare">down year</b>.</h1>
+      <p class="sub swap" data-swap="hero-sub">Since 1958, atmospheric carbon has returned a positive result every single year on record. We remain constructive on scarcity, long on consequence, and hedged against everything except hope.</p>
+    </div>
+    <div class="core">
+      <span class="corelabel">CO&#8322; &middot; 800,000-year record</span>
+      <svg viewBox="0 0 1000 400" preserveAspectRatio="none" role="img" aria-label="Engraved line chart of the 800,000-year carbon dioxide record, oscillating below 300 parts per million then spiking to 429 today.">
+        <defs>
+          <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#8E3A1D" stroke-width="0.7" opacity="0.35"/></pattern>
+        </defs>
+        <g id="ppmgrid"></g>
+        <path id="spikeFill" fill="url(#hatch)" stroke="none" opacity="0.9"></path>
+        <line id="ceiling" x1="0" x2="1000" stroke="#A17E2C" stroke-width="1.2" stroke-dasharray="6 6"/>
+        <text id="ceiltext" x="14" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#A17E2C" letter-spacing="1.4">300 PPM — UNBROKEN FOR 800,000 YEARS</text>
+        <path id="trace" fill="none" stroke="#1B1712" stroke-width="1.5"/>
+        <path id="spike" fill="none" stroke="#8E3A1D" stroke-width="2.6"/>
+        <circle id="nowdot" r="5" fill="#8E3A1D"/>
+        <text id="nowtext" font-family="Fraunces,serif" font-weight="600" font-size="26" fill="#8E3A1D" text-anchor="end">429</text>
+        <text id="nowsub" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#1B1712" text-anchor="end" letter-spacing="1.2">PPM · 2026</text>
+      </svg>
+      <span class="cap">Schematic of the ice-core &amp; instrumental CO&#8322; record after L&uuml;thi et&nbsp;al. (2008) and NOAA/Scripps. Glacial&ndash;interglacial range and present value are real; intermediate curve is stylised, not to scale.</span>
+    </div>
+  </section>
+
+  <!-- HOLDINGS -->
+  <section class="sec" id="holdings">
+    <div class="sec-head"><span class="lab">The Portfolio</span><h2>Four <b>holdings</b>, marked to reality</h2><span class="note">Live &middot; positions never rebalanced</span></div>
+    <div class="holdings">
+      <article class="pos" style="--accent:var(--oxblood)">
+        <div class="ph"><span class="sym">$CARB</span><span class="sector">Atmosphere</span></div>
+        <div><span class="big" data-count="429" data-dp="0">0</span><span class="unit">ppm</span></div>
+        <div class="delta"><span class="ar">&#9650;</span>+2.4 ppm / yr &middot; up every year since 1958</div>
+        <p class="cap swap" data-swap="carb">Never a down year in 67 years of records. Past performance, in this instance, does guarantee future results.</p>
+        <div class="src">NOAA / Scripps, Mauna Loa &middot; Met Office 2026 forecast 429.4 ppm</div>
+      </article>
+      <article class="pos" style="--accent:var(--oxblood)">
+        <div class="ph"><span class="sym">$HEAT</span><span class="sector">Thermal</span></div>
+        <div><span class="big" data-count="1.6" data-dp="1" data-prefix="+">0</span><span class="unit">&deg;C</span></div>
+        <div class="delta"><span class="ar">&#9650;</span>1.5&deg;C threshold &mdash; breached 2024</div>
+        <p class="cap swap" data-swap="heat">Paris target: breached. Adaptation TAM: unlocked. Constructive on cooling, desalination, and haven real estate.</p>
+        <div class="src">Copernicus / ECMWF, Global Climate Highlights 2024</div>
+      </article>
+      <article class="pos" style="--accent:var(--gold)">
+        <div class="ph"><span class="sym">$MID</span><span class="sector">Existential</span></div>
+        <div><span class="big" data-count="85" data-dp="0">0</span><span class="unit">sec to midnight</span></div>
+        <div class="delta"><span class="ar">&#9650;</span>+4 sec YoY &middot; 89 &rarr; 85 &middot; record</div>
+        <p class="cap swap" data-swap="mid">89 to 85 in a single year. Momentum favourable. Downside is, definitionally, limited.</p>
+        <div class="src">Bulletin of the Atomic Scientists, 27 Jan 2026</div>
+      </article>
+      <article class="pos" style="--accent:var(--forest)">
+        <div class="ph"><span class="sym">$RICH</span><span class="sector">Benchmark</span></div>
+        <div><span class="big" data-count="18.3" data-dp="1" data-prefix="$" data-suffix="T">0</span></div>
+        <div class="delta"><span class="ar">&#9650;</span>+16% (2025) &middot; +81% since 2020</div>
+        <p class="cap swap" data-swap="rich">The index we are all trying to beat. Note the correlation with every holding above. That is not a bug. That is the thesis.</p>
+        <div class="live">LIVE &middot; <span id="richlive">$18,300,000,000,000</span></div>
+        <div class="live"><span class="since">Accrued since you arrived:</span> <span id="richsince">+$0</span></div>
+        <div class="src">Oxfam, &lsquo;Resisting the Rule of the Rich&rsquo;, Jan 2026 &middot; +$2.5T in one year</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ISOMETRIC -->
+  <section class="sec" id="field">
+    <div class="sec-head"><span class="lab">Selected Indicators</span><h2>The <b>explosion</b>, in relief</h2><span class="note">Hover a bar for its source</span></div>
+    <p class="intro swap" data-swap="field-intro">Three books, rendered in relief. Each bar a decade; each decade, in our view, a position.</p>
+    <div class="tabs" role="tablist" aria-label="Dataset">
+      <button class="tab" data-ds="0" role="tab" aria-selected="true">Disasters</button>
+      <button class="tab" data-ds="1" role="tab" aria-selected="false">Temperature</button>
+      <button class="tab" data-ds="2" role="tab" aria-selected="false">Arctic ice</button>
+    </div>
+    <div class="stage">
+      <canvas id="isofield"></canvas>
+      <div class="stage-unit" id="stageUnit"></div>
+      <div class="isotip" id="isotip"><div class="v"></div><div class="l"></div><div class="s"></div></div>
+    </div>
+    <p class="field-say" id="fieldSay"></p>
+    <p class="field-note" id="fieldNote"></p>
+  </section>
+
+  <!-- FLYWHEEL -->
+  <section class="sec" id="engine">
+    <div class="sec-head"><span class="lab">The Flywheel</span><h2>The <b>compounding</b> engine</h2><span class="note">Hover a node for its dossier</span></div>
+    <p class="intro swap" data-swap="engine-intro">The flywheel is the whole business: capital builds compute, compute burns power, power prints emissions &mdash; and the returns bring the next round of capital. We are invested at every turn of the wheel.</p>
+    <div class="fly-stage" id="flyStage">
+      <svg class="ring" id="flySvg" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <ellipse cx="450" cy="270" rx="340" ry="150" fill="none" stroke="rgba(27,23,18,0.16)" stroke-width="1.2"/>
+        <ellipse id="flowRing" cx="450" cy="270" rx="340" ry="150" fill="none" stroke="#8E3A1D" stroke-width="1.4" stroke-dasharray="2 14" stroke-linecap="round" opacity="0.55"/>
+        <g id="flowDots"></g>
+      </svg>
+      <div class="fly-core"><div id="flyCoreSvg"></div><span class="lbl">The Engine</span></div>
+
+      <div class="fnode" tabindex="0" id="fn0" style="--nc:var(--gold)">
+        <div class="fl">01 &middot; Capital in</div>
+        <div class="fbig" data-count="448" data-dp="0" data-prefix="$" data-suffix="B">$0B</div>
+        <div class="fsub">AI capex, 2025</div>
+        <div class="dossier">Five hyperscalers' capital spending rose from <b>$162B (2022) to $448B (2025)</b> &mdash; 2.8&times; in three years &mdash; with <b>$600B+</b> guided for 2026. US private AI investment climbed <b>$109B &rarr; $286B</b> (2024&rarr;2025). Sources: Epoch AI / SEC filings; Stanford AI Index 2026.</div>
+      </div>
+      <div class="fnode d-left" tabindex="0" id="fn1" style="--nc:var(--teal)">
+        <div class="fl">02 &middot; Compute</div>
+        <div class="fbig">&times;2</div>
+        <div class="fsub">data-centre power by 2030</div>
+        <div class="dossier">The IEA projects electricity demand from data centres to <b>more than double by 2030</b> &mdash; to roughly the total consumption of Japan today. Source: IEA, 2025.</div>
+      </div>
+      <div class="fnode d-up" tabindex="0" id="fn2" style="--nc:var(--oxblood)">
+        <div class="fl">03 &middot; Emissions</div>
+        <div class="fbig" data-count="48" data-dp="0" data-prefix="+" data-suffix="%">+0%</div>
+        <div class="fsub">Google CO&#8322; vs 2019</div>
+        <div class="dossier">Google's emissions sit <b>48% above 2019</b> (11.5 Mt, 2024); its electricity use is ~3.5&times; 2019 levels. Microsoft's rose <b>25% in 2025</b> (~34 Mt), with energy use up <b>168% since 2020</b>. Sources: Google &amp; Microsoft Environmental Reports, 2024&ndash;2026.</div>
+      </div>
+      <div class="fnode d-right" tabindex="0" id="fn3" style="--nc:var(--forest)">
+        <div class="fl">04 &middot; Returns</div>
+        <div class="fbig">2030</div>
+        <div class="fsub">net-zero, receding</div>
+        <div class="dossier">Both Google and Microsoft pledged <b>net-zero / carbon-negative by 2030</b>. Both now emit more, not less &mdash; while rising AI revenue draws the next round of capital into the same buildout. Sources: company reports; Stanford AI Index.</div>
+      </div>
+    </div>
+    <p class="fly-say" id="flySay"></p>
+    <p class="fly-note">Capital: Epoch AI / SEC filings; Stanford AI Index 2025&ndash;2026. Power: IEA (2025). Emissions: Google &amp; Microsoft Environmental Sustainability Reports (2024&ndash;2026). Figures are each company's own reported values; the loop between them is the argument.</p>
+  </section>
+
+  <!-- CAPITAL LEDGER -->
+  <section class="sec" id="ledger">
+    <div class="sec-head"><span class="lab">The Ledger</span><h2>Where the money <b>actually goes</b></h2><span class="note">Clean vs. the machine &middot; 2024&ndash;2025</span></div>
+    <p class="intro swap" data-swap="ledger-intro">A brief reconciliation. Clean energy finally out-raises fossil two to one &mdash; and it has scarcely touched the ledger. The capital that compounds still finds the other column; we hold both sides of the book.</p>
+    <div class="ledger-viz" id="ledgerViz">
+      <svg viewBox="0 0 860 280" role="img" aria-label="Clean versus dirty capital. Energy investment 2025: clean $2.2 trillion versus fossil $1.1 trillion. New venture capital 2025: all climate tech $40.5 billion versus three AI labs $172 billion.">
+        <line x1="430" y1="34" x2="430" y2="250" stroke="#1B1712" stroke-width="1" opacity="0.45"/>
+        <text x="430" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="1.6" fill="#797263">ENERGY INVESTMENT &#183; 2025 &#183; IEA</text>
+        <rect id="b-clean" x="430" y="44" width="0" height="30" fill="#3B6042"/>
+        <rect id="b-fossil" x="430" y="44" width="0" height="30" fill="#8E3A1D"/>
+        <text x="122" y="63" text-anchor="end" font-family="Fraunces,serif" font-weight="600" font-size="21" fill="#1B1712">$2.2T</text>
+        <text x="122" y="80" text-anchor="end" font-family="Inter,sans-serif" font-size="11" fill="#4C463B">Clean energy</text>
+        <text x="590" y="63" text-anchor="start" font-family="Fraunces,serif" font-weight="600" font-size="21" fill="#1B1712">$1.1T</text>
+        <text x="590" y="80" text-anchor="start" font-family="Inter,sans-serif" font-size="11" fill="#4C463B">Oil, gas &amp; coal</text>
+        <text x="430" y="102" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="13" fill="#4C463B">Clean out-invests fossil two to one.</text>
+        <text x="430" y="150" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="1.6" fill="#797263">NEW VENTURE CAPITAL &#183; 2025</text>
+        <rect id="b-climate" x="430" y="170" width="0" height="30" fill="#3B6042"/>
+        <rect id="b-ai" x="430" y="170" width="0" height="30" fill="#8E3A1D"/>
+        <text x="352" y="189" text-anchor="end" font-family="Fraunces,serif" font-weight="600" font-size="21" fill="#1B1712">$40.5B</text>
+        <text x="352" y="206" text-anchor="end" font-family="Inter,sans-serif" font-size="11" fill="#4C463B">All climate tech</text>
+        <text x="742" y="189" text-anchor="start" font-family="Fraunces,serif" font-weight="600" font-size="21" fill="#1B1712">$172B</text>
+        <text x="742" y="206" text-anchor="start" font-family="Inter,sans-serif" font-size="11" fill="#4C463B">Three AI labs</text>
+        <text x="430" y="228" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="13" fill="#4C463B">AI out-raises all of climate tech roughly four to one.</text>
+      </svg>
+    </div>
+    <div class="ledger-entries">
+      <div class="lentry">
+        <p class="le-lab">Bank finance to fossil fuels</p>
+        <div class="le-big">$906B</div>
+        <div class="le-sub">2025 &middot; up 8% year on year</div>
+        <p class="le-body">$8.7 trillion committed since the Paris Agreement. JPMorgan Chase remains the largest financier, at $58 billion in 2025 &mdash; a decade after the sector's net-zero pledges.</p>
+        <div class="le-src">Banking on Climate Chaos 2026 &mdash; Rainforest Action Network, BankTrack, Reclaim Finance et al.</div>
+      </div>
+      <div class="lentry">
+        <p class="le-lab">Fossil-fuel subsidies &middot; 2024</p>
+        <div class="le-big">$6.7T</div>
+        <div class="le-sub">implicit &mdash; unpriced pollution &amp; climate damage</div>
+        <p class="le-body">On top of $725 billion in explicit subsidies governments pay directly. Together, fossil fuels are under-priced by roughly $7 trillion a year.</p>
+        <div class="le-src">IMF, Fossil Fuel Subsidies 2025 update (2024 data).</div>
+      </div>
+    </div>
+    <p class="field-say swap" data-swap="ledger-say" id="ledgerSay">We take no side in the ledger. We take both.</p>
+    <p class="field-note">Energy investment: IEA World Energy Investment 2025. Venture capital: Sightline Climate (climate tech, 2025) &amp; PitchBook (OpenAI, xAI, Anthropic combined, 2025). Bank finance: Banking on Climate Chaos 2026 (RAN et al.). Subsidies: IMF 2025 update (2024). Anthropic &mdash; one of the three AI labs shown &mdash; makes the assistant used to build this page.</p>
+  </section>
+
+  <!-- THE DIVIDE -->
+  <section class="sec" id="divide">
+    <div class="sec-head"><span class="lab">The Divide</span><h2>Who <b>keeps</b> it</h2><span class="note">Global shares &middot; 2025</span></div>
+    <p class="intro swap" data-swap="divide-intro">A note on distribution. The returns on everything above accrue narrowly &mdash; and that concentration is not a side-effect of the system. It is the system's finest product.</p>
+    <div class="share-legend">
+      <b><i style="background:#8E3A1D"></i>Top 10%</b>
+      <b><i style="background:#9C7A2A"></i>Middle 40%</b>
+      <b><i style="background:#3B6042"></i>Bottom 50%</b>
+    </div>
+    <div class="ledger-viz" id="divideViz">
+      <svg viewBox="0 0 860 300" role="img" aria-label="Global income and wealth shares, 2025. Income: top 10% earn 53 percent, middle 40% earn 39 percent, bottom 50% earn 8 percent. Wealth: top 10% own 75 percent, middle 40% own 23 percent, bottom 50% own 2 percent.">
+        <text x="40" y="40" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="1.4" fill="#797263">GLOBAL INCOME &mdash; WHO EARNS IT</text>
+        <text x="247" y="62" text-anchor="middle" font-family="Fraunces,serif" font-weight="600" font-size="17" fill="#1B1712">53%</text>
+        <text x="605" y="62" text-anchor="middle" font-family="Fraunces,serif" font-weight="600" font-size="14" fill="#1B1712">39%</text>
+        <text x="789" y="62" text-anchor="middle" font-family="Fraunces,serif" font-weight="600" font-size="13" fill="#1B1712">8%</text>
+        <rect id="inc-t10" x="40" y="70" width="0" height="42" fill="#8E3A1D"/>
+        <rect id="inc-m40" x="40" y="70" width="0" height="42" fill="#9C7A2A"/>
+        <rect id="inc-b50" x="40" y="70" width="0" height="42" fill="#3B6042"/>
+        <text x="40" y="134" font-family="Fraunces,serif" font-style="italic" font-size="13.5" fill="#4C463B">The top tenth of humanity takes over half; the bottom half shares eight percent.</text>
+        <text x="40" y="184" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="1.4" fill="#797263">GLOBAL WEALTH &mdash; WHO OWNS IT</text>
+        <text x="332" y="206" text-anchor="middle" font-family="Fraunces,serif" font-weight="600" font-size="17" fill="#1B1712">75%</text>
+        <text x="715" y="206" text-anchor="middle" font-family="Fraunces,serif" font-weight="600" font-size="14" fill="#1B1712">23%</text>
+        <text x="816" y="206" text-anchor="middle" font-family="Fraunces,serif" font-weight="600" font-size="13" fill="#1B1712">2%</text>
+        <rect id="wl-t10" x="40" y="214" width="0" height="42" fill="#8E3A1D"/>
+        <rect id="wl-m40" x="40" y="214" width="0" height="42" fill="#9C7A2A"/>
+        <rect id="wl-b50" x="40" y="214" width="0" height="42" fill="#3B6042"/>
+        <text x="40" y="278" font-family="Fraunces,serif" font-style="italic" font-size="13.5" fill="#4C463B">Half the world &mdash; about four billion people &mdash; owns two percent of it.</text>
+      </svg>
+    </div>
+    <div class="ledger-entries">
+      <div class="lentry">
+        <p class="le-lab">US CEO-to-worker pay</p>
+        <div class="le-big">281:1</div>
+        <div class="le-sub">2024 &middot; it was 21:1 in 1965</div>
+        <p class="le-body">Since 1979, US productivity rose about 90% while typical worker pay rose 33%. Had pay kept pace, the median worker would earn roughly $16 more an hour.</p>
+        <div class="le-src">Economic Policy Institute, 2025.</div>
+      </div>
+      <div class="lentry">
+        <p class="le-lab">Who causes it vs. who pays</p>
+        <div class="le-big">75%</div>
+        <div class="le-sub">of climate income losses fall on the poorest half of the world</div>
+        <p class="le-body">They cause roughly a tenth of emissions. The richest 10% &mdash; responsible for about half &mdash; face around 3% of the losses.</p>
+        <div class="le-src">World Inequality Lab; Oxfam.</div>
+      </div>
+    </div>
+    <p class="field-say swap" data-swap="divide-say">We are, naturally, positioned at the top of every chart on this page.</p>
+    <p class="field-note">Income &amp; wealth shares: World Inequality Report 2026 (World Inequality Lab &mdash; Chancel, Piketty et al.). Pay: Economic Policy Institute, 2025. Climate burden: World Inequality Lab &amp; Oxfam.</p>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="sec" id="principles">
+    <div class="sec-head"><span class="lab">House Principles</span><h2>How we <b>do things</b></h2></div>
+    <div class="principles">
+      <div class="prin"><div class="txt swap" data-swap="prin1">In a collapse, sell the bunkers and the boarding passes.</div><div class="num">/ 1</div></div>
+      <div class="prin"><div class="txt swap" data-swap="prin2">Idle capital is the only thing that doesn't compound. Everything else does.</div><div class="num">/ 2</div></div>
+      <div class="prin"><div class="txt swap" data-swap="prin3">It's not what the world loses, but what the portfolio keeps.</div><div class="num">/ 3</div></div>
+      <div class="prin"><div class="txt swap" data-swap="prin4">Time-horizon arbitrage: we simply hold a shorter one than the planet.</div><div class="num">/ 4</div></div>
+    </div>
+  </section>
+
+  <!-- THESIS -->
+  <section class="sec" id="thesis">
+    <div class="sec-head"><span class="lab">The Thesis</span><h2>Two lines, <b>one direction</b></h2></div>
+    <div class="thesis">
+      <div class="chart">
+        <svg viewBox="0 0 640 360" role="img" aria-label="Two rising lines 2020 to 2025: atmospheric CO2 and billionaire wealth, climbing together.">
+          <g id="th-grid"></g>
+          <path id="th-carb" fill="none" stroke="#8E3A1D" stroke-width="2.4"/>
+          <path id="th-rich" fill="none" stroke="#3B6042" stroke-width="2.4"/>
+          <g id="th-dots"></g><g id="th-x"></g>
+        </svg>
+        <div class="legend">
+          <div><i style="background:#8E3A1D"></i>Atmospheric CO&#8322; (ppm) &middot; NOAA</div>
+          <div><i style="background:#3B6042"></i>Billionaire wealth ($T) &middot; Oxfam</div>
+        </div>
+      </div>
+      <div class="say">
+        <h3 class="swap" data-swap="th-h">One trade, two readings</h3>
+        <p class="swap" data-swap="th-p">Our benchmark and the atmosphere have rarely tracked one another so closely. As the parts-per-million climb, so does the portfolio. We did not cause the correlation. We simply chose which of the two lines to own.</p>
+        <div class="src">CO&#8322;: NOAA / Scripps Mauna Loa annual means (2025 preliminary). Wealth plotted only at Oxfam-reported years &mdash; 2020 (derived from the +81%-since-2020 figure), 2023, 2024, 2025. 2021&ndash;2022 are omitted rather than estimated.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LETTER -->
+  <section class="letter">
+    <div class="sec-head"><span class="lab">To Our Limited Partners</span><h2 class="swap" data-swap="letter-h">A note on <b>positioning</b></h2></div>
+    <div class="box">
+      <p class="to swap" data-swap="letter-to">Q3 Positioning Note &middot; Strictly Confidential</p>
+      <p class="body swap" data-swap="letter-body">We continue to see durable, multi-decade tailwinds across the book. Scarcity remains structurally bid. Consequence compounds. The capital chasing compute has never been deeper, and the firms emitting most are, conveniently, the firms being funded most. We are long carbon, long heat, long midnight, and long the flywheel. We remain, as ever, constructive.</p>
+      <p class="sign swap" data-swap="letter-sign">&mdash; The Investment Committee</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-main">
+      <div class="sources">
+        <b>Sources, all primary.</b><br>
+        CO&#8322;: NOAA Global Monitoring Laboratory &amp; Scripps &middot; Met Office 2026 forecast. Temperature: Copernicus / ECMWF 2024 &middot; NASA GISTEMP.<br>
+        Disasters: NOAA NCEI. Arctic sea ice: NSIDC. Doomsday Clock: Bulletin of the Atomic Scientists (Jan 2026). Wealth: Oxfam (Jan 2026).<br>
+        AI capital: Epoch AI / SEC filings &middot; Stanford AI Index (2025&ndash;2026). Data-centre power: IEA (2025). Tech emissions: Google &amp; Microsoft Environmental Reports (2024&ndash;2026).
+      </div>
+      <p class="disclaimer">
+        <span class="hard">This is satire. The data, unfortunately, is not.</span>
+        Collapse Capital is not a fund, holds no positions, and manages nothing but a point. Every figure above is real and sourced; the only invention is the voice that finds them encouraging. If the numbers read like an opportunity, that is the joke. If they read like a warning, that is the point.
+      </p>
+      <a class="totop" href="#top">Back to top &uarr;</a>
+    </div>
+    <div class="foot-orn" id="guillocheFoot" aria-hidden="true"></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var body=document.body;
+
+  var COPY={
+    investor:{
+      "hero-h":'The only asset class that has never posted a <b class="flare">down year</b>.',
+      "hero-sub":"Since 1958, atmospheric carbon has returned a positive result every single year on record. We remain constructive on scarcity, long on consequence, and hedged against everything except hope.",
+      "carb":"Never a down year in 67 years of records. Past performance, in this instance, does guarantee future results.",
+      "heat":"Paris target: breached. Adaptation TAM: unlocked. Constructive on cooling, desalination, and haven real estate.",
+      "mid":"89 to 85 in a single year. Momentum favourable. Downside is, definitionally, limited.",
+      "rich":"The index we are all trying to beat. Note the correlation with every holding above. That is not a bug. That is the thesis.",
+      "field-intro":"Three books, rendered in relief. Each bar a decade; each decade, in our view, a position.",
+      "engine-intro":"The flywheel is the whole business: capital builds compute, compute burns power, power prints emissions \u2014 and the returns bring the next round of capital. We are invested at every turn of the wheel.",
+      "ledger-intro":"A brief reconciliation. Clean energy finally out-raises fossil two to one \u2014 and it has scarcely touched the ledger. The capital that compounds still finds the other column; we hold both sides of the book.",
+      "ledger-say":"We take no side in the ledger. We take both.",
+      "divide-intro":"A note on distribution. The returns on everything above accrue narrowly \u2014 and that concentration is not a side-effect of the system. It is the system's finest product.",
+      "divide-say":"We are, naturally, positioned at the top of every chart on this page.",
+      "prin1":"In a collapse, sell the bunkers and the boarding passes.",
+      "prin2":"Idle capital is the only thing that doesn't compound. Everything else does.",
+      "prin3":"It's not what the world loses, but what the portfolio keeps.",
+      "prin4":"Time-horizon arbitrage: we simply hold a shorter one than the planet.",
+      "th-h":"One trade, two readings",
+      "th-p":"Our benchmark and the atmosphere have rarely tracked one another so closely. As the parts-per-million climb, so does the portfolio. We did not cause the correlation. We simply chose which of the two lines to own.",
+      "letter-h":'A note on <b>positioning</b>',
+      "letter-to":"Q3 Positioning Note \u00b7 Strictly Confidential",
+      "letter-body":"We continue to see durable, multi-decade tailwinds across the book. Scarcity remains structurally bid. Consequence compounds. The capital chasing compute has never been deeper, and the firms emitting most are, conveniently, the firms being funded most. We are long carbon, long heat, long midnight, and long the flywheel. We remain, as ever, constructive.",
+      "letter-sign":"\u2014 The Investment Committee"
+    },
+    human:{
+      "hero-h":'Atmospheric carbon is higher than it has been in <b class="flare">800,000 years</b>.',
+      "hero-sub":"For eight hundred millennia it never crossed 300 parts per million. We are closing this year near 429 \u2014 rising roughly a hundred times faster than at any point in the natural record.",
+      "carb":"Climbing faster than at any point in the ice-core record \u2014 about 100 times the natural rate of change.",
+      "heat":"2024 was the first calendar year above 1.5\u00b0C \u2014 the line the world agreed it would try not to cross.",
+      "mid":"The closest to midnight the clock has stood in its 78 years. Nuclear risk, climate, AI, and disease, in one hand.",
+      "rich":"Up 81% since 2020, to a record $18.3 trillion held by ~3,000 people, while one in four people worldwide go hungry.",
+      "field-intro":"Three datasets, shown as they are. Each bar a decade of measured change \u2014 the shape is not an argument, it is a record.",
+      "engine-intro":"Money builds data centres; data centres burn power; power adds emissions \u2014 and the profits pull in the next round. The same loop, tightening. The firms emitting more each year are the ones capital is funding most \u2014 and calling it the future.",
+      "ledger-intro":"Clean energy investment has, at last, overtaken fossil fuels two to one. It has not been enough. Banks still financed $906 billion into fossil fuels last year, governments still under-price them by trillions, and venture capital now backs AI over climate roughly four to one.",
+      "ledger-say":"Every row here is a decision about where money goes \u2014 and who is left to wait for it.",
+      "divide-intro":"The same decade that broke the climate record concentrated the winnings. The richest tenth of the world now takes over half of all income; the poorest half of humanity owns two percent of the wealth.",
+      "divide-say":"Fewer than sixty thousand people now own three times the wealth of the poorest four billion.",
+      "prin1":"Someone is selling the exits. That someone is who profits when there's nowhere left to go.",
+      "prin2":"What compounds here is harm \u2014 and the distance between those who caused it and those who pay.",
+      "prin3":"What the world loses and what a portfolio keeps are, increasingly, the same ledger read two ways.",
+      "prin4":"The planet keeps a long horizon. Quarterly capital does not. That gap is the whole problem.",
+      "th-h":"One record, not four",
+      "th-p":"The wealthiest fortunes and the carbon in the air rose together, in lockstep, across the same five years. These are not two separate stories about money and weather. They are one story about who is paying, and who is not.",
+      "letter-h":'What the numbers <b>actually say</b>',
+      "letter-to":"What the numbers actually say",
+      "letter-body":"None of this is an opportunity. It is a record of what was broken and how quickly. Carbon is higher than in 800,000 years. The year crossed a line the world promised to hold. The clock is nearer midnight than it has ever stood. Fortunes at the top have never grown faster \u2014 and the capital keeps flowing to the very companies emitting more each year. That is not a glitch in the model. That is the model.",
+      "letter-sign":"\u2014 The data, without the voice"
+    }
+  };
+
+  var bI=document.getElementById('btn-investor'),bH=document.getElementById('btn-human');
+  function setMode(m){
+    if(body.dataset.mode===m)return;
+    var swaps=document.querySelectorAll('.swap');swaps.forEach(function(el){el.classList.add('swapping');});
+    body.dataset.mode=m;bI.setAttribute('aria-pressed',m==='investor');bH.setAttribute('aria-pressed',m==='human');
+    document.querySelector('.toggle').classList.remove('hint');
+    var apply=function(){swaps.forEach(function(el){var k=el.getAttribute('data-swap');if(COPY[m][k]!==undefined)el.innerHTML=COPY[m][k];el.classList.remove('swapping');});document.dispatchEvent(new CustomEvent('modechange',{detail:m}));};
+    if(reduce)apply();else setTimeout(apply,190);
+  }
+  bI.addEventListener('click',function(){setMode('investor');});
+  bH.addEventListener('click',function(){setMode('human');});
+
+  function countUp(el){
+    var target=parseFloat(el.getAttribute('data-count')),dp=parseInt(el.getAttribute('data-dp')||'0',10);
+    var pre=el.getAttribute('data-prefix')||'',suf=el.getAttribute('data-suffix')||'';
+    if(reduce){el.textContent=pre+target.toFixed(dp)+suf;return;}
+    var dur=1500,t0=null;
+    function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=pre+(target*e).toFixed(dp)+suf;if(p<1)requestAnimationFrame(step);else el.textContent=pre+target.toFixed(dp)+suf;}
+    requestAnimationFrame(step);
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){countUp(e.target);io.unobserve(e.target);}});},{threshold:0.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){io.observe(el);});
+
+  var dc=document.getElementById('dclock'),base=85.0,t=base;
+  function tick(){t-=0.01;if(t<=0.02)t=base;var m=Math.floor(t/60),s=Math.floor(t%60),c=Math.floor((t*100)%100);dc.textContent='00:'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+'.'+String(c).padStart(2,'0');}
+  if(reduce){dc.textContent='00:01:25.00';}else{setInterval(tick,10);}
+
+  var perSec=2.5e12/31536000,start=18.3e12,arrival=Date.now();
+  var rl=document.getElementById('richlive'),rs=document.getElementById('richsince');
+  function fmt(n){return '$'+Math.floor(n).toLocaleString('en-US');}
+  function wealth(){var el=(Date.now()-arrival)/1000;rl.textContent=fmt(start+perSec*el);rs.textContent='+'+fmt(perSec*el);}
+  wealth();if(!reduce)setInterval(wealth,60);
+
+  /* HERO engraved CO2 line chart */
+  (function core(){
+    var NS="http://www.w3.org/2000/svg",W=1000,H=400,pMin=150,pMax=460;
+    function y(p){return H-38-((p-pMin)/(pMax-pMin))*(H-70);}
+    var grid=document.getElementById('ppmgrid');
+    [200,250,300,350,400].forEach(function(p){var l=document.createElementNS(NS,'line');l.setAttribute('x1',0);l.setAttribute('x2',W);l.setAttribute('y1',y(p));l.setAttribute('y2',y(p));l.setAttribute('stroke','rgba(27,23,18,0.08)');l.setAttribute('stroke-width','1');grid.appendChild(l);});
+    document.getElementById('ceiling').setAttribute('y1',y(300));document.getElementById('ceiling').setAttribute('y2',y(300));
+    document.getElementById('ceiltext').setAttribute('y',y(300)-9);
+    var pts=[],spikeX=815,N=180,cycles=7;
+    for(var i=0;i<=N;i++){var x=(i/N)*spikeX,ph=Math.sin((i/N)*cycles*Math.PI*2),saw=(ph*0.5+0.5),ppm=182+saw*(285-182)+(Math.sin(i*0.7)*4);pts.push([x,y(ppm)]);}
+    document.getElementById('trace').setAttribute('d',"M"+pts.map(function(p){return p[0].toFixed(1)+","+p[1].toFixed(1);}).join(" L"));
+    var last=pts[pts.length-1],nowX=930,nowY=y(429);
+    var spiked="M"+last[0].toFixed(1)+","+last[1].toFixed(1)+" C"+(spikeX+55)+","+last[1]+" "+(nowX-30)+","+(nowY+120)+" "+nowX+","+nowY.toFixed(1);
+    document.getElementById('spike').setAttribute('d',spiked);
+    document.getElementById('spikeFill').setAttribute('d',spiked+" L"+nowX+","+y(150).toFixed(1)+" L"+last[0].toFixed(1)+","+y(150).toFixed(1)+" Z");
+    var dot=document.getElementById('nowdot');dot.setAttribute('cx',nowX);dot.setAttribute('cy',nowY);
+    var nt=document.getElementById('nowtext');nt.setAttribute('x',nowX-14);nt.setAttribute('y',nowY-16);
+    var ns=document.getElementById('nowsub');ns.setAttribute('x',nowX-14);ns.setAttribute('y',nowY-2);
+    if(!reduce){var tr=document.getElementById('trace'),sp=document.getElementById('spike');
+      [tr,sp].forEach(function(path,idx){var len=path.getTotalLength();path.style.strokeDasharray=len;path.style.strokeDashoffset=len;path.style.transition='stroke-dashoffset '+(idx===0?2.2:1.0)+'s '+(idx===0?'ease-out':'cubic-bezier(.5,0,.9,.4)')+' '+(idx===0?0.25:2.1)+'s';});
+      var sf=document.getElementById('spikeFill');[sf,dot,nt,ns].forEach(function(e){e.style.opacity=0;e.style.transition='opacity .6s ease 2.8s';});
+      requestAnimationFrame(function(){requestAnimationFrame(function(){tr.style.strokeDashoffset=0;sp.style.strokeDashoffset=0;sf.style.opacity=0.9;dot.style.opacity=1;nt.style.opacity=1;ns.style.opacity=1;});});
+    }
+  })();
+
+  /* THESIS chart */
+  (function thesisChart(){
+    var NS="http://www.w3.org/2000/svg",W=640,H=360,padL=44,padR=44,padT=28,padB=42;
+    var years=[2020,2021,2022,2023,2024,2025],carb=[414.24,416.45,418.56,421.08,424.61,426.9];
+    var richPts=[[0,10.11],[3,13.0],[4,15.0],[5,18.3]];
+    var cMin=412,cMax=430,rMin=9,rMax=20;
+    function x(i){return padL+i/(years.length-1)*(W-padL-padR);}
+    function yC(v){return H-padB-(v-cMin)/(cMax-cMin)*(H-padT-padB);}
+    function yR(v){return H-padB-(v-rMin)/(rMax-rMin)*(H-padT-padB);}
+    var grid=document.getElementById('th-grid');
+    for(var gy=0;gy<=4;gy++){var yv=padT+gy/4*(H-padT-padB),l=document.createElementNS(NS,'line');l.setAttribute('x1',padL);l.setAttribute('x2',W-padR);l.setAttribute('y1',yv);l.setAttribute('y2',yv);l.setAttribute('stroke','rgba(27,23,18,0.09)');grid.appendChild(l);}
+    function path(arr,yf,id){var d="M"+arr.map(function(v,i){return x(i).toFixed(1)+","+yf(v).toFixed(1);}).join(" L");var p=document.getElementById(id);p.setAttribute('d',d);if(!reduce){var len=p.getTotalLength();p.style.strokeDasharray=len;p.style.strokeDashoffset=len;p.style.transition='stroke-dashoffset 1.6s ease-out';}return p;}
+    var pc=path(carb,yC,'th-carb');
+    var rd="M"+richPts.map(function(p){return x(p[0]).toFixed(1)+","+yR(p[1]).toFixed(1);}).join(" L");
+    var pr=document.getElementById('th-rich');pr.setAttribute('d',rd);if(!reduce){var rlen=pr.getTotalLength();pr.style.strokeDasharray=rlen;pr.style.strokeDashoffset=rlen;pr.style.transition='stroke-dashoffset 1.6s ease-out';}
+    var dots=document.getElementById('th-dots');
+    function dot(i,v,yf,col){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',x(i));c.setAttribute('cy',yf(v));c.setAttribute('r',3.4);c.setAttribute('fill',col);dots.appendChild(c);}
+    carb.forEach(function(v,i){dot(i,v,yC,'#8E3A1D');});richPts.forEach(function(p){dot(p[0],p[1],yR,'#3B6042');});
+    var xg=document.getElementById('th-x');
+    years.forEach(function(yr,i){var tx=document.createElementNS(NS,'text');tx.setAttribute('x',x(i));tx.setAttribute('y',H-16);tx.setAttribute('text-anchor','middle');tx.setAttribute('font-family','Inter,sans-serif');tx.setAttribute('font-size','11');tx.setAttribute('fill','#736B5C');tx.textContent="'"+String(yr).slice(2);xg.appendChild(tx);});
+    var tio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!reduce){pc.style.strokeDashoffset=0;pr.style.strokeDashoffset=0;tio.disconnect();}});},{threshold:0.4});
+    tio.observe(document.getElementById('th-carb'));
+  })();
+
+  /* ticker tape */
+  (function tape(){
+    var items=[['$CARB','429 ppm','up'],['$HEAT','+1.6\u00b0C','up'],['$MID','85 sec','up'],['$RICH','$18.3T','up'],['$CAPEX','$448B AI / yr','up'],['$PWR','data centres \u00d72 by 2030','up'],['$GOOG','emissions +48% vs 2019','up'],['$MSFT','emissions +25% (2025)','up'],['$FOSSIL','banks $906B to fossil (2025)','up'],['$SUBSIDY','fossil subsidies ~$7T/yr','up'],['NOTE','the flywheel turns','']];
+    function block(){return items.map(function(it){var cls=it[2]==='up'?'up':'';return '<span><b>'+it[0]+'</b> <span class="'+cls+'">'+it[1]+(it[2]==='up'?' \u25B2':'')+'</span></span>';}).join('');}
+    document.getElementById('tape').innerHTML=block()+block();
+  })();
+
+  /* GUILLOCHE ornaments */
+  function guilloche(target,size,strokeCol,op,seed){
+    var NS="http://www.w3.org/2000/svg",svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('viewBox','0 0 '+size+' '+size);svg.setAttribute('width','100%');
+    var cx=size/2,cy=size/2,layers=[[0.46,7,0.5],[0.40,11,0.42],[0.33,5,0.55],[0.26,13,0.38]];
+    layers.forEach(function(L,li){
+      var R=size*L[0],k=L[1],dd=L[2],rot=(seed||0)+li*0.35,d="";
+      for(var a=0;a<=360;a+=1.2){var th=a*Math.PI/180+rot;
+        var rr=R*(1+dd*0.16*Math.cos(k*th));
+        var x=cx+rr*Math.cos(th),y=cy+rr*Math.sin(th);
+        d+=(a===0?"M":"L")+x.toFixed(1)+","+y.toFixed(1);}
+      d+="Z";
+      var p=document.createElementNS(NS,'path');p.setAttribute('d',d);p.setAttribute('fill','none');
+      p.setAttribute('stroke',strokeCol);p.setAttribute('stroke-width','0.6');p.setAttribute('opacity',op);svg.appendChild(p);
+    });
+    // concentric hairline rings
+    [0.5,0.36,0.2].forEach(function(f){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',size*f);c.setAttribute('fill','none');c.setAttribute('stroke',strokeCol);c.setAttribute('stroke-width','0.5');c.setAttribute('opacity',op*0.8);svg.appendChild(c);});
+    target.appendChild(svg);
+  }
+  guilloche(document.getElementById('guillocheHero'),560,'#1B1712',0.16,0.2);
+  guilloche(document.getElementById('guillocheFoot'),150,'#1B1712',0.5,1.1);
+  guilloche(document.getElementById('flyCoreSvg'),168,'#8E3A1D',0.7,0.6);
+
+  /* ===== ISOMETRIC FIELD ===== */
+  (function isofield(){
+    var canvas=document.getElementById('isofield');if(!canvas)return;
+    var ctx=canvas.getContext('2d'),DPR=Math.min(window.devicePixelRatio||1,2),Wl=1,Hl=1,tip=document.getElementById('isotip');
+    var DATASETS=[
+      {unit:'events / year',color:[150,72,40],hot:[4],hotc:[142,58,29],labels:['1980s','1990s','2000s','2010s','2020s'],values:[3.3,5.7,6.7,13.1,23.0],fmt:function(v){return v.toFixed(1);},srcShort:'NOAA NCEI',
+       note:'U.S. billion-dollar weather & climate disasters \u2014 decade averages (2020s = 2020\u20132024 mean, 23.0). Single-year record: 28 in 2023. Source: NOAA NCEI.',
+       invest:'Deal flow has never been stronger. Origination is up roughly seven-fold in forty years.',
+       human:'The U.S. now averages a billion-dollar disaster about every sixteen days.'},
+      {unit:'\u00b0C vs 1951\u20131980',color:[161,126,44],hot:[4],hotc:[142,58,29],labels:['1980s','1990s','2000s','2010s','2024'],values:[0.20,0.30,0.45,0.63,1.28],fmt:function(v){return '+'+v.toFixed(2)+'\u00b0';},srcShort:'NASA GISTEMP',
+       note:'Global surface-temperature anomaly, NASA GISTEMP (baseline 1951\u20131980). First four bars are decade means; the final bar is the 2024 annual value (+1.28\u00b0C). Source: NASA GISS.',
+       invest:'A structural long. The trend line has, to date, never disappointed.',
+       human:'2024 stood 1.28\u00b0C above the mid-century normal \u2014 the warmest year on record.'},
+      {unit:'million km\u00b2 \u00b7 Sept minimum',color:[78,126,122],hot:[],hotc:[142,58,29],labels:['81\u201310 avg','2023','2024','2025'],values:[6.22,4.26,4.28,4.60],fmt:function(v){return v.toFixed(2);},srcShort:'NSIDC',
+       note:'Arctic sea-ice September minimum extent. First bar is the 1981\u20132010 average (6.22); the rest are annual minima. Long-term trend \u221212.1% per decade. Source: NSIDC.',
+       invest:'The one short in the book. We are comfortable being short ice.',
+       human:'Summer sea ice is down roughly a third from the 1981\u20132010 average.'}
+    ];
+    var axo=1.0,ayo=0.56,step=1.75,bw=1.05,depth=1.05,targetH=3.6;
+    var cur=0,layout=null,frac=[],anim={active:false,start:0},parX=0,parY=0,tParX=0,tParY=0,hoverIdx=-1;
+    function wp(x,y,z){return {X:(x-y)*axo,Y:(x+y)*ayo-z};}
+    function resize(){var r=canvas.getBoundingClientRect();Wl=Math.max(1,r.width);Hl=Math.max(1,r.height);canvas.width=Math.round(Wl*DPR);canvas.height=Math.round(Hl*DPR);ctx.setTransform(DPR,0,0,DPR,0,0);computeLayout();draw();}
+    function computeLayout(){
+      var ds=DATASETS[cur],n=ds.values.length,maxV=Math.max.apply(null,ds.values),hUnit=targetH/maxV,full=ds.values.map(function(v){return v*hUnit;});
+      var xs=[],ys=[],add=function(p){xs.push(p.X);ys.push(p.Y);};
+      for(var i=0;i<n;i++){var x0=i*step,x1=x0+bw,h=full[i];[wp(x0,0,0),wp(x1,0,0),wp(x1,depth,0),wp(x0,depth,0),wp(x0,0,h),wp(x1,0,h),wp(x1,depth,h),wp(x0,depth,h)].forEach(add);}
+      add(wp(-0.3,-0.3,0));add(wp(n*step-step+bw+0.3,depth+0.3,0));
+      var minX=Math.min.apply(null,xs),maxX=Math.max.apply(null,xs),minY=Math.min.apply(null,ys),maxY=Math.max.apply(null,ys);
+      var padX=70,padTop=54,padBot=52,scale=Math.min((Wl-padX*2)/(maxX-minX),(Hl-padTop-padBot)/(maxY-minY));
+      var contentW=(maxX-minX)*scale,contentH=(maxY-minY)*scale,ox=(Wl-contentW)/2,oy=padTop+(Hl-padTop-padBot-contentH)/2;
+      layout={n:n,full:full,minX:minX,minY:minY,scale:scale,ox:ox,oy:oy};
+    }
+    function sp(x,y,z){var p=wp(x,y,z);return [(p.X-layout.minX)*layout.scale+layout.ox+parX,(p.Y-layout.minY)*layout.scale+layout.oy+parY];}
+    function poly(pts,fill,stroke,w){ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(var i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill();}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=w||1;ctx.stroke();}}
+    function shade(c,f){return 'rgb('+Math.min(255,Math.round(c[0]*f))+','+Math.min(255,Math.round(c[1]*f))+','+Math.min(255,Math.round(c[2]*f))+')';}
+    function draw(){
+      if(!layout)return;ctx.clearRect(0,0,Wl,Hl);var ds=DATASETS[cur],n=layout.n;
+      ctx.strokeStyle='rgba(27,23,18,0.14)';ctx.lineWidth=1;
+      var gx0=-0.3,gx1=n*step-step+bw+0.3;
+      for(var k=0;k<=n;k++){var gx=(k===n)?(n*step-step+bw):(k*step);var a=sp(gx,0,0),b=sp(gx,depth,0);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}
+      [0,depth].forEach(function(yy){var a=sp(gx0,yy,0),b=sp(gx1,yy,0);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();});
+      for(var i=0;i<n;i++){
+        var x0=i*step,x1=x0+bw,h=layout.full[i]*frac[i],isHot=ds.hot.indexOf(i)>=0,baseC=isHot?ds.hotc:ds.color,lift=(i===hoverIdx)?1.1:1;
+        var t00=sp(x0,0,h),t10=sp(x1,0,h),t11=sp(x1,depth,h),t01=sp(x0,depth,h),b00=sp(x0,0,0),b10=sp(x1,0,0),b11=sp(x1,depth,0),b01=sp(x0,depth,0);
+        poly([b00,b10,b11,b01],'rgba(27,23,18,0.16)');
+        poly([b01,b11,t11,t01],shade(baseC,0.66*lift));
+        poly([b10,b11,t11,t10],shade(baseC,0.84*lift));
+        poly([t00,t10,t11,t01],shade(baseC,1.06*lift),'rgba(27,23,18,0.22)',1);
+        var m0=sp(x0,depth*0.5,h),m1=sp(x1,depth*0.5,h);ctx.strokeStyle='rgba(255,255,255,0.14)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(m0[0],m0[1]);ctx.lineTo(m1[0],m1[1]);ctx.stroke();
+      }
+      ctx.textAlign='center';
+      for(var j=0;j<n;j++){
+        var cx=j*step+bw/2,h2=layout.full[j]*frac[j],topc=sp(cx,depth*0.5,h2),basec=sp(cx,depth+0.28,0);
+        ctx.font="600 15px Fraunces,serif";ctx.fillStyle='#1B1712';
+        if(frac[j]>0.15)ctx.fillText(ds.fmt(ds.values[j]),topc[0],topc[1]-12);
+        ctx.font="600 11px Inter,sans-serif";ctx.fillStyle='#4C463B';ctx.fillText(ds.labels[j],basec[0],basec[1]+4);
+      }
+    }
+    function easeOutBack(t){var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);}
+    function startAnim(){var ds=DATASETS[cur],n=ds.values.length;if(!layout)computeLayout();frac=new Array(n).fill(0);if(reduce){frac=frac.map(function(){return 1;});draw();return;}anim.active=true;anim.start=performance.now();requestAnimationFrame(loop);}
+    function loop(now){
+      var ds=DATASETS[cur],n=ds.values.length,done=true,stagger=95,dur=680;
+      for(var i=0;i<n;i++){var lt=(now-anim.start-i*stagger)/dur;if(lt<0){frac[i]=0;done=false;}else if(lt<1){frac[i]=Math.max(0,easeOutBack(lt));done=false;}else frac[i]=1;}
+      parX+=(tParX-parX)*0.08;parY+=(tParY-parY)*0.08;if(Math.abs(tParX-parX)>0.3||Math.abs(tParY-parY)>0.3)done=false;
+      draw();if(!done)requestAnimationFrame(loop);else anim.active=false;
+    }
+    function setDataset(i){cur=i;DATASETS.forEach(function(_,k){var b=document.querySelector('.tab[data-ds="'+k+'"]');if(b)b.setAttribute('aria-selected',k===i);});document.getElementById('stageUnit').textContent=DATASETS[i].unit;document.getElementById('fieldNote').textContent=DATASETS[i].note;refreshSay();hideTip();computeLayout();startAnim();}
+    function refreshSay(){var m=body.dataset.mode||'investor';document.getElementById('fieldSay').textContent=DATASETS[cur][m];}
+    function hideTip(){tip.style.opacity=0;hoverIdx=-1;}
+    function barAt(px){if(!layout)return -1;var n=layout.n,bestI=-1,bestD=1e9;for(var i=0;i<n;i++){var c=sp(i*step+bw/2,depth*0.5,0),d=Math.abs(c[0]-px);if(d<bestD){bestD=d;bestI=i;}}return bestD<(layout.scale*step*0.55)?bestI:-1;}
+    document.querySelectorAll('.tab').forEach(function(btn){btn.addEventListener('click',function(){setDataset(parseInt(btn.getAttribute('data-ds'),10));});});
+    document.addEventListener('modechange',refreshSay);
+    var fine=window.matchMedia('(pointer:fine)').matches;
+    canvas.addEventListener('mousemove',function(e){
+      var r=canvas.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;
+      if(!reduce&&fine){tParX=(px/r.width-0.5)*16;tParY=(py/r.height-0.5)*9;if(!anim.active){anim.active=true;requestAnimationFrame(loop);}}
+      var bi=barAt(px),ds=DATASETS[cur];
+      if(bi>=0){
+        if(bi!==hoverIdx){hoverIdx=bi;tip.querySelector('.v').textContent=ds.fmt(ds.values[bi]);tip.querySelector('.l').textContent=ds.labels[bi]+' \u00b7 '+ds.unit;tip.querySelector('.s').textContent='Source: '+ds.srcShort;tip.style.setProperty('--tipc',ds.hot.indexOf(bi)>=0?'var(--oxblood)':'rgb('+ds.color.join(',')+')');}
+        var c=sp(bi*step+bw/2,depth*0.5,layout.full[bi]*(frac[bi]||1));tip.style.left=c[0]+'px';tip.style.top=(c[1]-14)+'px';tip.style.opacity=1;
+      } else if(hoverIdx>=0){hideTip();}
+    });
+    canvas.addEventListener('mouseleave',function(){tParX=0;tParY=0;hideTip();if(!reduce&&fine&&!anim.active){anim.active=true;requestAnimationFrame(loop);}});
+    var ro;window.addEventListener('resize',function(){clearTimeout(ro);ro=setTimeout(resize,150);});
+    document.getElementById('stageUnit').textContent=DATASETS[0].unit;document.getElementById('fieldNote').textContent=DATASETS[0].note;refreshSay();
+    frac=new Array(DATASETS[0].values.length).fill(reduce?1:0);resize();
+    var started=false,sio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!started){started=true;startAnim();sio.disconnect();}});},{threshold:0.3});
+    sio.observe(canvas);
+  })();
+
+  /* ===== FLYWHEEL ===== */
+  (function flywheel(){
+    var stage=document.getElementById('flyStage'),svg=document.getElementById('flySvg');if(!stage||!svg)return;
+    var cx=450,cy=270,rx=340,ry=150,nodes=[{id:'fn0',a:-90},{id:'fn1',a:0},{id:'fn2',a:90},{id:'fn3',a:180}];
+    function place(){var ctm=svg.getScreenCTM();if(!ctm)return;var srect=stage.getBoundingClientRect();
+      nodes.forEach(function(nd){var ang=nd.a*Math.PI/180,vx=cx+rx*Math.cos(ang),vy=cy+ry*Math.sin(ang),pt=svg.createSVGPoint();pt.x=vx;pt.y=vy;var sc=pt.matrixTransform(ctm);var el=document.getElementById(nd.id);el.style.left=(sc.x-srect.left)+'px';el.style.top=(sc.y-srect.top)+'px';});}
+    var NS="http://www.w3.org/2000/svg",dotG=document.getElementById('flowDots'),DOTS=7,dotEls=[];
+    for(var i=0;i<DOTS;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('r',3.5);c.setAttribute('fill','#8E3A1D');c.setAttribute('opacity','0.85');dotG.appendChild(c);dotEls.push(c);}
+    function dotPos(t){return [cx+rx*Math.cos(t),cy+ry*Math.sin(t)];}
+    var phase=0;
+    function animateDots(){phase+=0.0052;for(var i=0;i<DOTS;i++){var t=phase+i*(Math.PI*2/DOTS),p=dotPos(t),front=(Math.sin(t)+1)/2;dotEls[i].setAttribute('cx',p[0]);dotEls[i].setAttribute('cy',p[1]);dotEls[i].setAttribute('r',2+front*2.6);dotEls[i].setAttribute('opacity',0.3+front*0.55);}requestAnimationFrame(animateDots);}
+    place();window.addEventListener('resize',function(){clearTimeout(window.__flyRo);window.__flyRo=setTimeout(place,120);});
+    setTimeout(place,300);setTimeout(place,900);
+    if(!reduce){requestAnimationFrame(animateDots);}else{for(var j=0;j<DOTS;j++){var t=j*(Math.PI*2/DOTS),p=dotPos(t);dotEls[j].setAttribute('cx',p[0]);dotEls[j].setAttribute('cy',p[1]);}}
+    var flySay=document.getElementById('flySay');
+    var SAY={investor:"Every turn is a position. We hold capital, compute, power, and consequence \u2014 and collect on the spin.",human:"This is the trade being made on everyone's behalf: fund the compute, book the returns, and let the emissions land on people who never saw the pitch deck."};
+    function setSay(){flySay.textContent=SAY[body.dataset.mode||'investor'];}
+    setSay();document.addEventListener('modechange',setSay);
+
+    /* auto-tour: reveal each node's dossier when the flywheel scrolls into view */
+    var tourNodes=['fn0','fn1','fn2','fn3'],tIdx=0,tTimer=null,tStarted=false,tUser=false;
+    function tClear(){tourNodes.forEach(function(id){var e=document.getElementById(id);if(e)e.classList.remove('active');});}
+    function tStep(){tClear();if(tIdx>=tourNodes.length)return;var e=document.getElementById(tourNodes[tIdx]);if(e)e.classList.add('active');tIdx++;tTimer=setTimeout(tStep,2700);}
+    function tStart(){if(tStarted||tUser||reduce)return;tStarted=true;tIdx=0;tTimer=setTimeout(tStep,700);}
+    function tCancel(){tUser=true;if(tTimer){clearTimeout(tTimer);tTimer=null;}tClear();}
+    stage.addEventListener('mouseenter',tCancel);stage.addEventListener('touchstart',tCancel,{passive:true});
+    tourNodes.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('mouseenter',tCancel);e.addEventListener('focus',tCancel,true);}});
+    var tio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)tStart();});},{threshold:0.55});
+    tio.observe(stage);
+  })();
+
+  /* ===== CAPITAL LEDGER ===== */
+  (function ledger(){
+    var viz=document.getElementById('ledgerViz');if(!viz)return;
+    var CENTER=430,bars=[{id:'b-clean',side:'l',len:300},{id:'b-fossil',side:'r',len:150},{id:'b-climate',side:'l',len:70.6},{id:'b-ai',side:'r',len:300}];
+    function setBar(b,p){var el=document.getElementById(b.id);if(!el)return;var len=b.len*p;if(b.side==='l'){el.setAttribute('x',CENTER-len);el.setAttribute('width',len);}else{el.setAttribute('x',CENTER);el.setAttribute('width',len);}}
+    bars.forEach(function(b){setBar(b,0);});
+    function reveal(){if(reduce){bars.forEach(function(b){setBar(b,1);});viz.classList.add('in');return;}var t0=null,dur=1200;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);bars.forEach(function(b){setBar(b,e);});if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);viz.classList.add('in');}
+    var lseen=false,lio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting&&!lseen){lseen=true;reveal();}});},{threshold:0.4});
+    lio.observe(viz);
+  })();
+
+  /* ===== THE DIVIDE ===== */
+  (function divide(){
+    var viz=document.getElementById('divideViz');if(!viz)return;
+    var BARX=40,BARW=780,segs=[{id:'inc-t10',cs:0,fr:0.53},{id:'inc-m40',cs:0.53,fr:0.39},{id:'inc-b50',cs:0.92,fr:0.08},{id:'wl-t10',cs:0,fr:0.75},{id:'wl-m40',cs:0.75,fr:0.23},{id:'wl-b50',cs:0.98,fr:0.02}];
+    function setSeg(s,p){var el=document.getElementById(s.id);if(!el)return;el.setAttribute('x',BARX+BARW*p*s.cs);el.setAttribute('width',BARW*p*s.fr);}
+    segs.forEach(function(s){setSeg(s,0);});
+    function reveal(){if(reduce){segs.forEach(function(s){setSeg(s,1);});viz.classList.add('in');return;}var t0=null,dur=1250;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);segs.forEach(function(s){setSeg(s,e);});if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);viz.classList.add('in');}
+    var dseen=false,dio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting&&!dseen){dseen=true;reveal();}});},{threshold:0.35});
+    dio.observe(viz);
+  })();
+
+})();
+</script>
+</body>
+</html>
