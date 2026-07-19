@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Threshold — Collapse Capital Research</title>
-<meta name="description" content="An interactive atlas of Earth's tipping points, and the climate technologies actually worth funding before they tip. The research behind Collapse Capital's real position.">
+<meta name="description" content="An interactive atlas of Earth's tipping points, and where independent assessments say the climate funding gaps are widest. Research and opinion behind the Collapse Capital satire — not investment advice.">
 <meta name="theme-color" content="#FBF9F4">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FBF9F4'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%238E3A1D' stroke-width='2'/%3E%3Cline x1='16' y1='5' x2='16' y2='27' stroke='%231B1712' stroke-width='1.1'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,9 +158,9 @@
   .mit-item{padding:12px 0;border-top:1px solid var(--rule)}.mit-item:first-of-type{border-top:none}
   .mi-t{font-weight:600;font-size:14.5px}.mi-d{color:var(--ink-soft);font-size:13.5px;margin-top:2px}
   .mi-h{font-family:var(--mono);font-size:11px;color:var(--stable);margin-top:5px;letter-spacing:.02em}.lev .mi-h{color:var(--lever)}
-  .honesty{margin-top:16px;border:1.5px solid var(--lever);border-radius:2px;padding:14px 16px;background:#e6eff2}
-  .honesty .h{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lever);margin-bottom:6px}
-  .honesty p{margin:0;font-size:13.5px;color:var(--ink-soft)}.honesty p b{color:var(--ink)}
+  .honesty{margin:14px 0 18px;border:2px solid var(--lever);border-radius:3px;padding:16px 18px;background:#e6eff2}
+  .honesty .h{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lever);margin-bottom:8px}
+  .honesty p{margin:0 0 10px;font-size:13.5px;color:var(--ink-soft)}.honesty p:last-child{margin-bottom:0}.honesty p b{color:var(--ink)}
 
   footer{border-top:1.5px solid var(--ink);margin-top:36px;padding:26px 0 64px;color:var(--ink-faint);font-size:12px}
   footer .srcs{font-family:var(--mono);font-size:11px;line-height:1.95;letter-spacing:.02em}footer b{color:var(--ink-soft)}
@@ -188,6 +188,8 @@
   .tech-legend{display:flex;gap:20px;flex-wrap:wrap;margin:12px 0 4px;font-size:12px;color:var(--ink-soft)}
   .tech-legend span{display:flex;align-items:center;gap:7px}
   .tl-sw{width:13px;height:13px;border-radius:50%;flex:none}
+  .sweet-note{margin:16px 0 0;padding:13px 16px;border-left:2px solid var(--crossed);background:var(--paper-2);font-size:13.5px;color:var(--ink-soft);max-width:76ch}
+  .sweet-note b{color:var(--ink)}
   .tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:22px}
   .tech-card{border:1.5px solid var(--ink);background:var(--card);border-radius:3px;padding:15px 16px;cursor:pointer;transition:.15s;position:relative}
   .tech-card:hover{background:var(--paper-2);transform:translateY(-2px)}
@@ -219,9 +221,10 @@ body::before{opacity:.016}
 header.top{padding:52px 0 24px;border-bottom:none}
 header.top::after{background:none}
 .plate{color:var(--ink-dim);border-bottom:1px solid var(--rule);padding-bottom:12px;margin-bottom:8px}
-h1.title{font-weight:500;letter-spacing:-.035em;text-shadow:none}
+h1.title{font-weight:500;letter-spacing:-.025em;text-shadow:none;font-size:clamp(28px,4.2vw,52px);max-width:22ch;line-height:1.12}
 h1.title .dot{color:var(--crossed)}
-.subtitle{max-width:34ch}
+.subtitle{max-width:58ch}
+.orient{max-width:60ch;margin:14px 0 0;font-size:13.5px;color:var(--ink-dim);font-style:normal}
 .hero-orn{margin:22px 0 4px;color:var(--rule-2);display:flex;justify-content:center}
 .hero-orn::before,.hero-orn::after{background:linear-gradient(90deg,transparent,var(--rule-2) 20%,var(--rule-2) 80%,transparent)}
 .hero-orn svg{width:132px;height:22px;display:block;flex:none}
@@ -254,6 +257,7 @@ section.block::before{display:none}
 footer{border-top:1px solid var(--rule-2);position:relative;padding-top:26px}
 footer::before{content:"\25C6";position:absolute;top:-8px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:12px;background:var(--paper);padding:0 12px}
 footer::after{display:none}
+.fin-disclaimer{margin-top:18px;font-size:12px;color:var(--ink-faint)}
 
 
 /* globe stage — a permanent, quiet mission-control surface behind every view mode */
@@ -302,8 +306,15 @@ footer::after{display:none}
 
 <header class="top"><div class="wrap">
   <div class="plate"><span>Collapse Capital Research · Earth-system tipping elements</span><span>Est. thresholds · °C above pre-industrial</span></div>
-  <h1 class="title">Threshold<span class="dot">.</span></h1>
-  <p class="subtitle">The real position behind the satire: where the climate system changes state — and what's actually worth funding before it does.</p>
+  <!-- Title options considered:
+       A. "Earth's Tipping Points — and Where the Climate Money Isn't"
+       B. "The Thresholds We're Approaching, and the Technologies Nobody's Pricing In"
+       C. "Where the Climate System Breaks — and What's Still Underfunded"
+       Chosen: A. Names both halves of the page (the physical thresholds and the funding gap)
+       plainly, in one line, without editorializing it into a buy call. -->
+  <h1 class="title">Earth's tipping points — and where the climate money isn't<span class="dot">.</span></h1>
+  <p class="subtitle">A research essay behind the &ldquo;Collapse Capital&rdquo; satire — mapping where the climate system breaks, and where independent assessments say the funding gaps are widest. We call the project <b>Threshold</b>.</p>
+  <p class="orient">This page is research and opinion, not a financial product. &ldquo;Collapse Capital&rdquo; is a satirical frame built around real, sourced data — nothing here is investment advice, and nothing on it should be read as a recommendation to buy, fund, or avoid any company.</p>
   <p class="lede">Tipping points aren't dates on a calendar. Each is a <b>temperature range</b> — a threshold the Earth may cross as it warms. Move the dial to raise global warming and watch each element pass from stable, to approaching, to inside its danger range. Then turn on the <b>leverage layer</b> to see where solutions — including microbial electrochemical systems — actually change the odds, and where nothing can.</p>
   <p class="deep-time"><span class="k">A note on scale</span>The last time CO₂ sat near today's level (~420&nbsp;ppm) was the <b>mid-Pliocene, roughly 3&nbsp;million years ago</b>, when seas stood some 10–20&nbsp;m higher. We are steering the planet toward a climate it last knew before modern humans existed.</p>
 </div></header>
@@ -367,10 +378,10 @@ footer::after{display:none}
 
   <section class="block">
     <div class="sec-head">
-      <div class="num">Where To Invest</div>
-      <h2>What deserves investment — impact, funding &amp; readiness</h2>
+      <div class="num">The Funding Gaps</div>
+      <h2>Where independent assessments flag the biggest gaps</h2>
     </div>
-    <p class="howto">Three things decide where money should go: a technology’s <b>potential climate impact</b> (vertical), the <b>funding it already attracts</b> (horizontal), and how <b>ready to deploy</b> it is (marker size — bigger is more mature). The shaded upper-left is the sweet spot: high potential, low funding. Large markers there are the clearest “biggest bang for buck.” Red marks technologies independent assessments flag as neglected relative to their potential. <i>Potential impact is a directional assessment synthesized from the sourced figures (Gt&nbsp;CO₂/yr where it exists), not a precise number.</i> Click any marker or card for the full record.</p>
+    <p class="howto">Three things describe a technology's position here: a technology’s <b>potential climate impact</b> (vertical), the <b>funding it already attracts</b> (horizontal), and how <b>ready to deploy</b> it is (marker size — bigger is more mature). The shaded upper-left is the sweet spot: high potential, low funding. Large markers there are the clearest cases of impact outrunning capital. <!-- TODO: name the specific assessment(s) behind "neglected" for each red-flagged technology — currently sourced per-card (see TECH.srcs) but not named in this sentence. --> Red marks technologies that per-technology assessments (cited on each card) flag as neglected relative to their potential. <i>Potential impact is a directional assessment synthesized from the sourced figures (Gt&nbsp;CO₂/yr where it exists), not a precise number.</i> Click any marker or card for the full record.</p>
     <svg id="scatter" role="img" aria-label="Scatter of climate technologies by funding versus maturity"></svg>
     <div class="tech-legend">
       <span><span class="tl-sw" style="background:var(--crossed)"></span>High potential &amp; underfunded</span>
@@ -378,6 +389,7 @@ footer::after{display:none}
       <span><svg width="34" height="16" style="overflow:visible"><circle cx="7" cy="8" r="4" fill="none" stroke="var(--ink-soft)"></circle><circle cx="25" cy="8" r="8" fill="none" stroke="var(--ink-soft)"></circle></svg>marker size = readiness (TRL)</span>
       <span style="color:var(--ink-dim)">DAC shown as the well-funded contrast</span>
     </div>
+    <p class="sweet-note" id="sweetNote"></p>
     <div class="tech-grid" id="techGrid"></div>
   </section>
 
@@ -396,25 +408,40 @@ footer::after{display:none}
       <div class="mit-col lev">
         <div class="tag">Microbial electrochemical systems</div>
         <h3>Where MES plugs in</h3>
-        <div id="mesLevers"></div>
         <div class="honesty">
-          <div class="h">An honest boundary</div>
-          <p>MES is an early-stage contributor to the <b>emissions &amp; industrial-carbon</b> lever — not a planetary thermostat. Its real role: treating waste streams while generating energy, converting CO₂ into usable chemicals, and recovering metals and nutrients. It shrinks footprints and closes loops; it does not touch ice or ocean currents directly.</p>
+          <div class="h">An honest boundary — the lowest-impact item on this page</div>
+          <p>Of every technology charted in the section above, MES scores the most <b>modest potential climate impact</b>. It is an early-stage contributor to the <b>emissions &amp; industrial-carbon</b> lever — not a planetary thermostat. Its real role: treating waste streams while generating energy, converting CO₂ into usable chemicals, and recovering metals and nutrients. It shrinks footprints and closes loops; it does not touch ice sheets or ocean currents directly, and it will not move the thresholds charted above on its own.</p>
+          <p>A modest-impact technology can still belong in a portfolio. MES already works at pilot-to-industrial scale (TRL 7) on problems — waste treatment, metal recovery — worth solving regardless of whether the field ever reaches gigatonne scale. That is a smaller, more defensible claim than the "underfunded, high-leverage" case made for the technologies above, and it's the one MES can actually support.</p>
         </div>
+        <div id="mesLevers"></div>
       </div>
     </div>
+  </section>
+
+  <section class="block" id="takeaway" style="border-top:none;margin-top:10px">
+    <div class="sec-head">
+      <div class="num">The Takeaway</div>
+      <h2>What to do with this</h2>
+    </div>
+    <p class="howto">Warming is still the master lever — every threshold on this page moves with it, and nothing below changes that. But within the technologies people are already funding, impact and capital aren't currently aligned: atmospheric methane removal, direct ocean capture, and blue carbon restoration sit in the underfunded sweet spot, while direct air capture absorbs a disproportionate share of climate money for a comparable slice of potential impact. If you take one thing from this page, take this: look at where the gap between impact and funding is widest, and treat that gap — not the loudest technology — as the signal.</p>
+    <p class="howto" style="margin-top:14px">This is one team's synthesis of public, cited data — not a recommendation. Read the sources, check the ones flagged for verification below, and form your own view of where the money should actually go.</p>
   </section>
 
   <footer>
     <div class="srcs">
       <b>Threshold estimates:</b> Armstrong McKay et al., <i>Science</i> 2022 (central estimates &amp; ranges).<br>
       <b>Synthesis &amp; status:</b> Global Tipping Points Report 2023/2025 (Lenton et al., Univ. of Exeter).<br>
+      <!-- FLAG FOR VERIFICATION: "Rahmstorf/PIK & van Westen 2025-26" — please confirm. "2025-26" reads as a
+           future/rolling date, and the attribution mixes a named researcher/institute (Rahmstorf/PIK) with a
+           separate author (van Westen) under one informal citation. Needs a real publication name, venue, and
+           a single resolved year (or "in press" / preprint status) before this should be presented as a source. -->
       <b>Observed readings:</b> Gatti et al. 2021 (SE-Amazon carbon source); NOAA/Copernicus (4th global coral bleaching event, 2023–24); Rahmstorf/PIK &amp; van Westen 2025–26 (AMOC risk revised earlier than IPCC AR6).<br>
       <b>Reference lines &amp; deep-time:</b> Paris Agreement targets; current-policy warming per Climate Action Tracker; mid-Pliocene per PlioMIP &amp; IPCC AR6 paleoclimate.<br>
       <b>MES:</b> qualitative technology-readiness statements from the microbial-electrochemistry literature &amp; MESSAI positioning — not projected mitigation tonnages.<br>
       <span style="color:var(--ink-faint)">Ranges are real estimates with genuine uncertainty; headline figures are sourced order-of-magnitude, not illustrative filler. Marker positions are representative.</span>
     </div>
-    <p style="margin-top:18px;font-size:12.5px"><a href="index.html" style="color:var(--lever)">← Back to the Collapse Capital prospectus</a></p>
+    <p class="fin-disclaimer">This page is research and opinion. It is not financial advice, and nothing on it is an offer or recommendation to buy, sell, or fund any security or company.</p>
+    <p style="margin-top:10px;font-size:12.5px"><a href="index.html" style="color:var(--lever)">← Back to the Collapse Capital prospectus</a></p>
   </footer>
 </div>
 
@@ -434,7 +461,7 @@ footer::after{display:none}
 // ---------------------------------------------------------------------------
 const ELEMENTS = [
   { id:'gris',name:'Greenland Ice Sheet',short:'Greenland ice',plain:'The world\u2019s second-largest ice sheet.',loc:'Greenland',lat:72,lon:-40,
-    central:1.5,min:0.8,max:3.0,speed:'Slow · centuries to millennia',core:true,confidence:'medium',
+    central:1.5,min:0.8,max:3.0,speed:'Slow · centuries to millennia',core:true,confidence:'medium',irreversible:true,
     stat:'≈7 m',statLb:'of sea-level rise locked in the ice',
     reverse:'Effectively irreversible over millennia once committed',
     signal:'Accelerating ice discharge and record surface-melt years; darkening ice absorbs more heat.',
@@ -443,7 +470,7 @@ const ELEMENTS = [
     cascade:['amoc','spg'],lever:'Only the warming lever applies — nothing reverses committed loss on human timescales.',mes:null,srcs:'McKay 2022; IPCC AR6' },
 
   { id:'wais',name:'West Antarctic Ice Sheet',short:'W. Antarctic ice',plain:'A marine ice sheet grounded below sea level — inherently unstable.',loc:'West Antarctica',lat:-80,lon:-110,
-    central:1.5,min:1.0,max:3.0,speed:'Slow · centuries to millennia',core:true,confidence:'medium',
+    central:1.5,min:1.0,max:3.0,speed:'Slow · centuries to millennia',core:true,confidence:'medium',irreversible:true,
     stat:'≈3–5 m',statLb:'of sea-level rise in the marine basin',
     reverse:'Self-sustaining once grounding lines retreat',
     signal:'Grounding-line retreat at Thwaites and Pine Island glaciers.',
@@ -458,6 +485,9 @@ const ELEMENTS = [
     signal:'The subpolar "cold blob" south of Greenland — a cooling patch in a warming ocean.',
     observed:'The cold blob persists; 2025 work finds a slowdown, and leading researchers have revised the risk earlier than IPCC AR6.',
     effect:'A shutdown would sharply cool NW Europe against the warming trend, shift the monsoons that feed billions, and raise sea level on the US East Coast.',
+    // FLAG FOR VERIFICATION: "Rahmstorf/PIK 2025-26" — same citation flagged in the footer sources block.
+    // "2025-26" reads as a future/rolling date and mixes a named researcher/institute with a separate author
+    // (van Westen) under one informal citation. Confirm the actual publication, venue, and year before shipping.
     cascade:['gris','amazon','spg'],lever:'Driven by warming plus Greenland meltwater. The only practical handle is limiting warming — there is no engineered restart.',mes:null,srcs:'McKay 2022; Rahmstorf/PIK 2025–26; van Westen 2025' },
 
   { id:'spg',name:'Subpolar Gyre convection',short:'Subpolar gyre',plain:'Deep-water mixing in the North Atlantic — a "mini-AMOC".',loc:'Labrador / Irminger Sea',lat:58,lon:-45,
@@ -517,7 +547,7 @@ const ELEMENTS = [
     cascade:[],lever:'Warming lever only.',mes:null,srcs:'McKay 2022' },
 
   { id:'eais',name:'East Antarctic subglacial basins',short:'E. Antarctic basins',plain:'Vulnerable ice basins in the largest ice sheet of all.',loc:'East Antarctica',lat:-73,lon:100,
-    central:3.0,min:2.0,max:6.0,speed:'Very slow · millennial',core:false,confidence:'low',
+    central:3.0,min:2.0,max:6.0,speed:'Very slow · millennial',core:false,confidence:'low',irreversible:true,
     stat:'multi-metre',statLb:'of sea-level potential in vulnerable basins',
     reverse:'Millennial and effectively irreversible once engaged',
     signal:'Warm-water intrusion beneath basin outlet glaciers.',
@@ -810,11 +840,18 @@ function paintBands(w){
 
 // ---------------------------------------------------------------------------
 function narrate(w){
-  const cr=ELEMENTS.filter(e=>statusOf(e,w)==='crossed').map(e=>e.short);
+  const crEls=ELEMENTS.filter(e=>statusOf(e,w)==='crossed');
+  const cr=crEls.map(e=>e.short);
   const ap=ELEMENTS.filter(e=>statusOf(e,w)==='approach');
+  const irr=crEls.filter(e=>e.irreversible);
   let s=`At <b>+${(Math.round(w*100)/100)}°C</b>, `;
   if(cr.length===0)s+=`no element has entered its danger range yet, though `+(ap.length?`<b>${ap.length}</b> are approaching`:`the nearest thresholds are close`)+`.`;
-  else s+=`<b>${cr.length}</b> element${cr.length>1?'s are':' is'} in the danger range — ${cr.slice(0,4).join(', ')}${cr.length>4?`, and ${cr.length-4} more`:''}. <b>${ap.length}</b> more approaching.`;
+  else{
+    s+=`<b>${cr.length}</b> element${cr.length>1?'s are':' is'} in the danger range — ${cr.slice(0,4).join(', ')}${cr.length>4?`, and ${cr.length-4} more`:''}. <b>${ap.length}</b> more approaching.`;
+    if(irr.length===1&&crEls.length===1) s+=` It doesn't recover on human timescales.`;
+    else if(irr.length&&irr.length===crEls.length) s+=` None of them recover on human timescales.`;
+    else if(irr.length) s+=` ${irr.length} of those — ${irr.map(e=>e.short).join(', ')} — ${irr.length>1?"don't":"doesn't"} recover on human timescales.`;
+  }
   document.getElementById('narr').innerHTML=s;
 }
 function update(){
@@ -1095,7 +1132,7 @@ function openTech(id){
       <div class="d-block"><h4>Which tipping points it touches</h4><div>${addrChips(t)}</div></div>
       <div class="d-block"><h4>Where it stands</h4><p>${t.scale}</p></div>
       <div class="d-block"><h4>Funding</h4><p>${t.fundLabel}</p></div>
-      ${t.why?`<div class="d-block"><h4>Why it's a bang-for-buck case</h4><div class="observed">${t.why}</div></div>`:''}
+      ${t.why?`<div class="d-block"><h4>Why it's flagged as underfunded</h4><div class="observed">${t.why}</div></div>`:''}
       <div class="d-block"><h4>Risks & limits</h4><div class="signal"><b>Note:</b> ${t.risk}</div></div>
       <div class="src">Sources: ${t.srcs}</div>
     </div>`;
@@ -1103,8 +1140,20 @@ function openTech(id){
   backdrop.classList.add('show');dossier.classList.add('show');dossier.setAttribute('aria-hidden','false');
 }
 
+// standing takeaway for the scatter — names whatever currently sits in the underfunded "sweet spot"
+function buildSweetNote(){
+  const picks=TECH.filter(t=>t.neg);
+  const host=document.getElementById('sweetNote');
+  if(!picks.length){host.textContent='';return;}
+  const clause=t=>{const w=(t.why||'').replace(/\.$/,'');return `<b>${t.name}</b>${w?` (${w.charAt(0).toLowerCase()+w.slice(1)})`:''}`;};
+  const parts=picks.map(clause);
+  const last=parts.pop();
+  host.innerHTML=`Right now the sweet spot holds ${picks.length} technolog${picks.length>1?'ies':'y'}: ${parts.length?parts.join(', ')+', and ':''}${last}.`;
+}
+
 buildTech();
 buildScatter();
+buildSweetNote();
 update();
 </script>
 </body>
