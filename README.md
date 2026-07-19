@@ -18,11 +18,20 @@ fund's pitch deck, or as what it actually describes.
 
 Deployed on Vercel: **https://collapse-capital.vercel.app**
 
+## Pages
+
+- `index.html` — the prospectus.
+- `collapse-tech.html` — **Threshold**, the research arm: an interactive
+  atlas of Earth's tipping points, plus the underfunded climate
+  technologies worth funding before they tip. Linked from the prospectus'
+  nav and its closing section.
+
 ## Tech
 
-A single self-contained static page — `index.html`. No framework, no build
-step, no dependencies. Fonts are loaded from Google Fonts; all charts,
-icons, and animation are hand-rolled inline SVG/CSS/JS.
+Two self-contained static pages. No framework, no build step. Fonts load
+from Google Fonts; charts, icons, and animation are hand-rolled inline
+SVG/CSS/JS. Threshold's globe additionally uses D3 + TopoJSON (via CDN)
+for its four view modes (emissions, satellite, night, atlas).
 
 ## Local preview
 
