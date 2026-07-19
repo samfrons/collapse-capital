@@ -292,6 +292,14 @@ footer::after{display:none}
 .ccbar nav a:hover,.ccbar nav a.on{color:var(--crossed)}
 @media(max-width:640px){.ccbar nav{display:none}}
 
+/* floating layout-variant switcher */
+.vswitch{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:35;display:flex;align-items:center;gap:2px;background:rgba(251,249,244,.92);backdrop-filter:blur(8px);border:1.5px solid var(--ink);border-radius:100px;padding:5px 6px;box-shadow:0 12px 30px -12px rgba(27,23,18,.35);white-space:nowrap}
+.vswitch .vs-lbl{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);padding:0 8px 0 10px}
+.vswitch a{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:6px 12px;border-radius:100px;transition:.15s}
+.vswitch a:hover{color:var(--ink)}
+.vswitch a.on{background:var(--ink);color:var(--paper)}
+@media(max-width:640px){.vswitch{bottom:12px}}
+
 </style>
 </head>
 <body>
@@ -441,6 +449,14 @@ footer::after{display:none}
     <p class="fin-disclaimer">This page is research and opinion. It is not financial advice, and nothing on it is an offer or recommendation to buy, sell, or fund any security or company.</p>
     <p style="margin-top:10px;font-size:12.5px"><a href="index.html" style="color:var(--lever)">← Back to the Collapse Capital prospectus</a></p>
   </footer>
+</div>
+
+<div class="vswitch" role="navigation" aria-label="Layout variants">
+  <span class="vs-lbl">Layout</span>
+  <a href="collapse-tech.html">Original</a>
+  <a href="collapse-tech-a.html" class="on" title="Annotated chart">A</a>
+  <a href="collapse-tech-b.html" title="Head-to-head">B</a>
+  <a href="collapse-tech-c.html" title="Time bands">C</a>
 </div>
 
 <div class="backdrop" id="backdrop"></div>
