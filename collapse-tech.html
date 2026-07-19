@@ -44,8 +44,6 @@
   h1.title{font-family:var(--disp);font-weight:500;font-size:clamp(46px,9vw,108px);line-height:.9;letter-spacing:-.025em;margin:.1em 0 .12em}
   h1.title .dot{color:var(--crossed)}
   .subtitle{font-family:var(--disp);font-style:italic;font-weight:400;font-size:clamp(17px,2.2vw,23px);color:var(--ink-soft);margin:0 0 14px}
-  .lede{max-width:64ch;color:var(--ink-soft);font-size:clamp(15px,1.55vw,17.5px)}
-  .lede b{color:var(--ink);font-weight:600}
   .deep-time{margin-top:16px;font-family:var(--body);font-size:13px;color:var(--ink-dim);border-left:2px solid var(--gold);padding-left:14px}
   .deep-time b{color:var(--ink)}
   .deep-time .k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
@@ -224,7 +222,6 @@ header.top::after{background:none}
 h1.title{font-weight:500;letter-spacing:-.025em;text-shadow:none;font-size:clamp(28px,4.2vw,52px);max-width:22ch;line-height:1.12}
 h1.title .dot{color:var(--crossed)}
 .subtitle{max-width:58ch}
-.orient{max-width:60ch;margin:14px 0 0;font-size:13.5px;color:var(--ink-dim);font-style:normal}
 .hero-orn{margin:22px 0 4px;color:var(--rule-2);display:flex;justify-content:center}
 .hero-orn::before,.hero-orn::after{background:linear-gradient(90deg,transparent,var(--rule-2) 20%,var(--rule-2) 80%,transparent)}
 .hero-orn svg{width:132px;height:22px;display:block;flex:none}
@@ -306,17 +303,16 @@ footer::after{display:none}
 
 <header class="top"><div class="wrap">
   <div class="plate"><span>Collapse Capital Research · Earth-system tipping elements</span><span>Est. thresholds · °C above pre-industrial</span></div>
-  <!-- Title options considered:
-       A. "Earth's Tipping Points — and Where the Climate Money Isn't"
-       B. "The Thresholds We're Approaching, and the Technologies Nobody's Pricing In"
-       C. "Where the Climate System Breaks — and What's Still Underfunded"
-       Chosen: A. Names both halves of the page (the physical thresholds and the funding gap)
-       plainly, in one line, without editorializing it into a buy call. -->
-  <h1 class="title">Earth's tipping points — and where the climate money isn't<span class="dot">.</span></h1>
-  <p class="subtitle">A research essay behind the &ldquo;Collapse Capital&rdquo; satire — mapping where the climate system breaks, and where independent assessments say the funding gaps are widest. We call the project <b>Threshold</b>.</p>
-  <p class="orient">This page is research and opinion, not a financial product. &ldquo;Collapse Capital&rdquo; is a satirical frame built around real, sourced data — nothing here is investment advice, and nothing on it should be read as a recommendation to buy, fund, or avoid any company.</p>
-  <p class="lede">Tipping points aren't dates on a calendar. Each is a <b>temperature range</b> — a threshold the Earth may cross as it warms. Move the dial to raise global warming and watch each element pass from stable, to approaching, to inside its danger range. Then turn on the <b>leverage layer</b> to see where solutions — including microbial electrochemical systems — actually change the odds, and where nothing can.</p>
-  <p class="deep-time"><span class="k">A note on scale</span>The last time CO₂ sat near today's level (~420&nbsp;ppm) was the <b>mid-Pliocene, roughly 3&nbsp;million years ago</b>, when seas stood some 10–20&nbsp;m higher. We are steering the planet toward a climate it last knew before modern humans existed.</p>
+  <!-- Title revised again after feedback that the hero had too much stacked text (title + subhead +
+       disclaimer + lede + deep-time note). Cut to a title + one subhead line; the dropped "funding gap"
+       framing and the mid-Pliocene note moved to "The Thresholds" section below, where they have more room.
+       Options considered this round:
+       A. "The Climate Tipping Points — and the Tech That Can Help"
+       B. "Where the Climate Breaks, and What's Being Built to Slow It"
+       C. "Earth's Tipping Points, and the Technologies Racing to Address Them"
+       Chosen: A — plainest reading of the two things this page actually is. -->
+  <h1 class="title">The climate tipping points — and the tech that can help<span class="dot">.</span></h1>
+  <p class="subtitle">Where Earth's climate system breaks, mapped against the technologies working on each threshold. Research and opinion — not investment advice.</p>
 </div></header>
 
 <div class="wrap">
@@ -373,6 +369,7 @@ footer::after{display:none}
       <h2>Every tipping point, ranked by how soon</h2>
     </div>
     <p class="howto">Read each bar as a range of possible tipping temperatures — the wider the bar, the less certain the science. Vertical guides mark the Paris targets and where current policies are heading. Click any element for its full record.</p>
+    <p class="deep-time"><span class="k">A note on scale</span>The last time CO₂ sat near today's level (~420&nbsp;ppm) was the <b>mid-Pliocene, roughly 3&nbsp;million years ago</b>, when seas stood some 10–20&nbsp;m higher. We are steering the planet toward a climate it last knew before modern humans existed.</p>
     <svg id="bandchart" role="img" aria-label="Threshold ranges per element with Paris reference lines"></svg>
   </section>
 
