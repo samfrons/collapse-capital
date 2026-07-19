@@ -225,6 +225,11 @@
   }
   a:focus-visible,button:focus-visible,.fnode:focus-visible{outline:2px solid var(--oxblood);outline-offset:2px;}
   @media(prefers-reduced-motion:reduce){.tape-track,.toggle.hint,.fly-core svg,#flowRing{animation:none;}*{scroll-behavior:auto;}}
+
+  /* THRESHOLD CTA — the break in the joke */
+  .th-cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:13px 22px;border:1.5px solid var(--ink);border-radius:100px;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.02em;color:var(--ink);text-decoration:none;transition:background .2s,color .2s;}
+  .th-cta:hover{background:var(--ink);color:var(--paper);}
+  .th-cta svg{width:14px;height:14px;flex:none;}
 </style>
 </head>
 <body data-mode="investor">
@@ -233,7 +238,7 @@
   <div class="top-bar">
     <a class="wordmark" href="#top"><span class="mk">Collapse Capital</span><span class="lp">LP</span></a>
     <nav class="mid">
-      <a href="#holdings">Holdings</a><a href="#field">Indicators</a><a href="#engine">The Flywheel</a><a href="#ledger">The Ledger</a><a href="#divide">The Divide</a><a href="#thesis">Thesis</a>
+      <a href="#holdings">Holdings</a><a href="#field">Indicators</a><a href="#engine">The Flywheel</a><a href="#ledger">The Ledger</a><a href="#divide">The Divide</a><a href="#thesis">Thesis</a><a href="collapse-tech.html">Threshold</a>
     </nav>
     <div class="clock" aria-label="Doomsday Clock countdown"><span class="pip"></span><span><span class="lbl">T&#8211;MINUS&nbsp;</span><span id="dclock">00:01:25.00</span></span></div>
     <div class="toggle hint" role="group" aria-label="Reading mode">
@@ -507,6 +512,13 @@
       <p class="body swap" data-swap="letter-body">We continue to see durable, multi-decade tailwinds across the book. Scarcity remains structurally bid. Consequence compounds. The capital chasing compute has never been deeper, and the firms emitting most are, conveniently, the firms being funded most. We are long carbon, long heat, long midnight, and long the flywheel. We remain, as ever, constructive.</p>
       <p class="sign swap" data-swap="letter-sign">&mdash; The Investment Committee</p>
     </div>
+  </section>
+
+  <!-- THRESHOLD -->
+  <section class="sec" id="threshold">
+    <div class="sec-head"><span class="lab">The Research Arm</span><h2>Where we're <b>actually</b> positioned</h2></div>
+    <p class="intro">Every position in this book assumes the trend lines keep climbing. They don't have to. <b>Threshold</b> is the research behind the joke: an interactive atlas of the points where the climate system changes state, and the underfunded technologies that are the real high-leverage trade &mdash; before they're priced in.</p>
+    <a class="th-cta" href="collapse-tech.html">Open Threshold — the real position <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </section>
 
 </main>
